@@ -13,9 +13,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Compile LaTeX document
-        uses: repaction/texlive@main
+        uses: xu-cheng/latex-action@v2
         with:
-          tex_files: phelipe_teles.tex
+          root_file: phelipe_teles.tex
 
       - name: Create release
         uses: softprops/action-gh-release@v1
