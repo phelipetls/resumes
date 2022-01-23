@@ -1,37 +1,46 @@
-\documentclass{resume}
+\documentclass[11pt,letterpaper]{article}
 
 \usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage{hyperref}
-
-\name{PHELIPE TELES DA SILVA}
-\address{30 de jan. de 1996 (25 anos) \\ Rio de Janeiro}
-\address{
-  (21) 9 8047-3484 \\ phelipe\_teles@hotmail.com \\
-  \href{https://linkedin.com/in/phelipeteles}{LinkedIn} \\
-  \href{https://phelipetls.github.io}{Blog}
-}
+\usepackage[parfill]{parskip}
+\usepackage{array}
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%   EDUCATION SECTION
-%----------------------------------------------------------------------------------------
+\centerline{\MakeUppercase{\huge\bf Phelipe Teles da Silva}}
+\medskip
 
-\begin{rSection}{FORMAÇÃO}
-  \begin{rSubsection}{Universidade Federal Rural do Rio de Janeiro}{Mar. 2015 --
-    Dez. 2020}{Ciências Econômicas}{}
-  \end{rSubsection}
-\end{rSection}
+\centerline{30 de jan. de 1996 (25 anos) $\diamond$ Rio de Janeiro}
+\smallskip
 
-%----------------------------------------------------------------------------------------
-%   WORK EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
+\centerline{
+  (21) 9 8047-3484 $\diamond$
+  \href{mailto:phelipe_teles@hotmail.com}{phelipe\_teles@hotmail.com} $\diamond$ \href{https://linkedin.com/in/phelipeteles}{LinkedIn}
+}
+\smallskip
 
-\begin{rSection}{EXPERIÊNCIA}
-  \begin{rSubsection}{Mutual}{Dez. 2020 -- atualmente}{Desenvolvedor
-    front-end}{Remoto}
+\medskip \textbf{FORMAÇÃO} \medskip
+\hrule
+
+\textbf{Universidade Federal Rural do Rio de Janeiro} \hfill {Mar. 2015 -- Dez. 2020} \\
+\emph{Ciências Econômicas} \hfill \\
+
+\medskip \textbf{EXPERIÊNCIA} \medskip
+\hrule
+
+\textbf{Mutual} \hfill Dez. 2020 -- Atualmente \\
+\emph{Desenvolvedor front-end} \hfill \emph{Remoto} \\
+
+\vspace*{-\baselineskip}
+
+\begin{list}
+{$\cdot$}
+{
+\setlength{\leftmargin}{0em}
+\setlength{\itemsep}{-0.5em}
+}
   \item Desenvolvimento de aplicações mobile e web com React, React Native,
     JavaScript e TypeScript.
   \item Implementação de testes de integração com Jest, react-testing-library,
@@ -41,35 +50,40 @@
   \item Uso de bibliotecas como Redux, Material UI, react-router, react-query,
     react-navigation etc.
   \item Component-driven development com Storybook.
-  \end{rSubsection}
-\end{rSection}
+\end{list}
 
-%----------------------------------------------------------------------------------------
-%   PROJECTS SECTION
-%----------------------------------------------------------------------------------------
+\medskip \textbf{PROJETOS} \medskip
+\hrule
 
-\begin{rSection}{PROJETOS}
-  \begin{rSubsection}{}{}{}{}
-  \item \href{https://phelipetls.github.io}{\textbf{Blog}}: Blog
-    desenvolvido com Hugo, HTML, JavaScript, TailwindCSS e GitHub Actions.
-  \item \href{http://ipeadata-explorer.surge.sh}{\textbf{Ipeadata Explorer}}:
-    Frontend para a API do Ipeadata. Uso de React, Material-UI, Cypress,
-    Chart.js, react-simple-maps.
-  \item \href{https://github.com/phelipetls/minesweeper.js}{\textbf{Campo
-    minado}}: Express e PostgreSQL no backend. JavaScript e CSS puro no
-    frontend.
-  \item \href{https://github.com/phelipetls/seriesbr}{\textbf{seriesbr}}:
-    Biblioteca em Python para consumir APIs do BCB, IPEA e IBGE em um DataFrame
-    do pandas.
-  \end{rSubsection}
-\end{rSection}
+\begin{list}
+{$\cdot$}
+{
+\setlength{\leftmargin}{0em}
+\setlength{\itemsep}{-0.5em}
+}
+ \item \href{https://phelipetls.github.io}{\textbf{Blog}}: Blog desenvolvido com
+   Hugo, HTML, JavaScript, TailwindCSS e GitHub Actions.
+ \item \href{http://ipeadata-explorer.surge.sh}{\textbf{Ipeadata Explorer}}:
+   Frontend para o Ipeadata. Uso de React, Material-UI, Cypress, Chart.js,
+   react-simple-maps.
+ \item \href{https://github.com/phelipetls/minesweeper.js}{\textbf{Campo minado}}:
+   Express e PostgreSQL no backend. JavaScript e CSS puro no frontend.
+ \item \href{https://github.com/phelipetls/seriesbr}{\textbf{seriesbr}}:
+   Biblioteca em Python para consumir APIs do BCB, IPEA e IBGE em um DataFrame
+   do pandas.
+\end{list}
 
-%----------------------------------------------------------------------------------------
-%   IDIOMS SECTION
-%----------------------------------------------------------------------------------------
+\medskip \textbf{IDIOMAS} \medskip
+\hrule
 
-\begin{rSection}{IDIOMAS}
-  Inglês avançado.
-\end{rSection}
+\begin{list}
+{$\cdot$}
+{
+\setlength{\leftmargin}{0em}
+\setlength{\itemsep}{-0.5em}
+}
+  \item Inglês avançado.
+\end{list}
+
 
 \end{document}
