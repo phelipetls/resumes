@@ -1,9 +1,6 @@
 name: Build Resumé and release
 
-on:
-  push:
-    tags:
-      - '*'
+on: [push]
 
 jobs:
   build_latex:
@@ -17,8 +14,17 @@ jobs:
         with:
           root_file: phelipe_teles.tex
 
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date --utc --iso-8601=minutes)"
+
+      - name: Create tag
+        uses: tvdias/github-tagger@v0.0.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          tag: ${{ steps.date.outputs.date }}
+
       - name: Create release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: phelipe_teles.pdf
