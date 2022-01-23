@@ -7,6 +7,16 @@
 \usepackage[parfill]{parskip}
 \usepackage{array}
 
+\newenvironment{tightlist}
+  {\begin{list}
+    {$\cdot$}
+    {
+      \setlength{\leftmargin}{0em}
+      \setlength{\itemsep}{-0.5em}
+    }
+  }
+{\end{list}}
+
 \begin{document}
 
 \centerline{\huge\bf PHELIPE TELES DA SILVA}
@@ -35,12 +45,7 @@
 
 \vspace*{-\baselineskip}
 
-\begin{list}
-{$\cdot$}
-{
-\setlength{\leftmargin}{0em}
-\setlength{\itemsep}{-0.5em}
-}
+\begin{tightlist}
   \item Desenvolvimento de aplicações mobile e web com React, React Native,
     JavaScript e TypeScript.
   \item Implementação de testes de integração com Jest, react-testing-library,
@@ -50,17 +55,12 @@
   \item Uso de bibliotecas como Redux, Material UI, react-router, react-query,
     react-navigation etc.
   \item Component-driven development com Storybook.
-\end{list}
+\end{tightlist}
 
 \medskip \textbf{PROJETOS} \medskip
 \hrule
 
-\begin{list}
-{$\cdot$}
-{
-\setlength{\leftmargin}{0em}
-\setlength{\itemsep}{-0.5em}
-}
+\begin{tightlist}
  \item \href{https://phelipetls.github.io}{\textbf{Blog}}: Blog desenvolvido com
    Hugo, HTML, JavaScript, TailwindCSS e GitHub Actions.
  \item \href{http://ipeadata-explorer.surge.sh}{\textbf{Ipeadata Explorer}}:
@@ -71,18 +71,13 @@
  \item \href{https://github.com/phelipetls/seriesbr}{\textbf{seriesbr}}:
    Biblioteca em Python para consumir APIs do BCB, IPEA e IBGE em um DataFrame
    do pandas.
-\end{list}
+\end{tightlist}
 
 \medskip \textbf{IDIOMAS} \medskip
 \hrule
 
-\begin{list}
-{$\cdot$}
-{
-\setlength{\leftmargin}{0em}
-\setlength{\itemsep}{-0.5em}
-}
+\begin{tightlist}
   \item Inglês avançado.
-\end{list}
+\end{tightlist}
 
 \end{document}
