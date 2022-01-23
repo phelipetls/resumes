@@ -13,6 +13,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: phelipe_teles.tex
+          pre_compile: tlmgr install calcage
 
       - name: Get current date
         id: date
