@@ -1,0 +1,24 @@
+name: Build Resumé and release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v2
+
+      - name: Compile LaTeX document
+        uses: repaction/texlive@main
+        with:
+          tex_files: phelipe_teles.tex
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: phelipe_teles.pdf
