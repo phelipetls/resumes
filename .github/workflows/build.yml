@@ -28,3 +28,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: phelipe_teles.pdf
+          tag_name: ${{ steps.date.outputs.date }}
