@@ -29,3 +29,14 @@ jobs:
         with:
           files: phelipe_teles.pdf
           tag_name: ${{ steps.date.outputs.date }}
+
+      - name: Move pdf to resume folder
+        run: mkdir resume && mv phelipe_teles.pdf resume
+
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          build_dir: resume
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
