@@ -12,10 +12,10 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: phelipe_teles.tex
+          root_file: PhelipeTelesResume.tex
 
       - name: Move pdf to resume folder
-        run: mkdir resume && mv phelipe_teles.pdf resume
+        run: mkdir resume && mv PhelipeTelesResume.pdf resume
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
