@@ -14,22 +14,6 @@ jobs:
         with:
           root_file: phelipe_teles.tex
 
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date '+%Y%m%d%H%M')"
-
-      - name: Create tag
-        uses: tvdias/github-tagger@v0.0.1
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          tag: ${{ steps.date.outputs.date }}
-
-      - name: Create release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: phelipe_teles.pdf
-          tag_name: ${{ steps.date.outputs.date }}
-
       - name: Move pdf to resume folder
         run: mkdir resume && mv phelipe_teles.pdf resume
 
