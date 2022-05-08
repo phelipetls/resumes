@@ -15,12 +15,12 @@ jobs:
           root_file: phelipe-teles-resume.tex
 
       - name: Move pdf to resume folder
-        run: mkdir resume && mv phelipe-teles-resume.pdf resume
+        run: mkdir build && mv phelipe-teles-resume.pdf build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
-          build_dir: resume
+          build_dir: build
           jekyll: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
