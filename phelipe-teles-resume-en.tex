@@ -8,6 +8,16 @@
 \usepackage{array}
 \usepackage{palatino}
 \usepackage[T1]{fontenc}
+\usepackage{titlesec}
+
+\titleformat
+{\section} % command
+[display] % shape
+{\bfseries\large} % format
+{} % label
+{\medskip} % sep
+{} % before-code
+[\hrule] % after-code
 
 \newenvironment{tightlist}
   {\begin{list}
@@ -38,8 +48,7 @@
 }
 \smallskip
 
-\medskip \textbf{EXPERIENCE} \medskip
-\hrule
+\section*{EXPERIENCE}
 
 \textbf{\href{https://mutual.club}{Mutual}} \hfill Dez. 2020 -- Present \\
 \textit{Front-end developer} \hfill \textit{Remote} {\parfillskip=0pt\par}
@@ -69,8 +78,7 @@ with React.
     Sentry in our CI/CD pipelines, for our mobile and web apps.
 \end{tightlist}
 
-\medskip \textbf{TECHNOLOGIES} \medskip
-\hrule
+\section*{TECHNOLOGIES}
 
 \begin{description}
   \item[Programming languages] JavaScript, TypeScript, Python, Bash, Lua.
@@ -82,14 +90,12 @@ with React.
   \item[DevOps] Docker, GitLab CI/CD, GitHub Actions, Ansible.
 \end{description}
 
-\medskip \textbf{EDUCATION} \medskip
-\hrule
+\section*{EDUCATION}
 
 \textbf{Universidade Federal Rural do Rio de Janeiro} \hfill {Mar. 2015 -- Dec. 2020} \\
 \textit{Economics} \hfill \textit{Seropédica, RJ} {\parfillskip=0pt\par}
 
-\medskip \textbf{LANGUAGES} \medskip
-\hrule
+\section*{LANGUAGES}
 
 \begin{tightlist}
   \item Advanced English.

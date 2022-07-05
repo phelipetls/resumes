@@ -8,6 +8,16 @@
 \usepackage{array}
 \usepackage{palatino}
 \usepackage[T1]{fontenc}
+\usepackage{titlesec}
+
+\titleformat
+{\section} % command
+[display] % shape
+{\bfseries\large} % format
+{} % label
+{\medskip} % sep
+{} % before-code
+[\hrule] % after-code
 
 \newenvironment{tightlist}
   {\begin{list}
@@ -38,8 +48,7 @@
 }
 \smallskip
 
-\medskip \textbf{EXPERIÊNCIA} \medskip
-\hrule
+\section*{EXPERIÊNCIA}
 
 \textbf{Mutual} \hfill Dez. 2020 -- Presente \\
 \textit{Desenvolvedor front-end} \hfill \textit{Remoto} {\parfillskip=0pt\par}
@@ -70,14 +79,12 @@ de dívidas, escrito com React.
     web.
 \end{tightlist}
 
-\medskip \textbf{FORMAÇÃO} \medskip
-\hrule
+\section*{FORMAÇÃO}
 
 \textbf{Universidade Federal Rural do Rio de Janeiro} \hfill {Mar. 2015 -- Dez. 2020} \\
 \textit{Ciências Econômicas} \hfill \textit{Seropédica, RJ} {\parfillskip=0pt\par}
 
-\medskip \textbf{IDIOMAS} \medskip
-\hrule
+\section*{IDIOMAS}
 
 \begin{tightlist}
   \item Inglês avançado.
