@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+
+\usepackage[left=1cm,top=1cm,right=1cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{array}
+\usepackage{palatino}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+
+\titleformat
+{\section} % command
+[display] % shape
+{\bfseries\large} % format
+{} % label
+{\medskip} % sep
+{} % before-code
+[\hrule] % after-code
+
+\newenvironment{tightlist}
+  {\begin{list}
+    {$\cdot$}
+    {
+      \setlength{\leftmargin}{0em}
+      \setlength{\itemsep}{\smallskipamount}
+    }
+  }
+{\end{list}}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\centerline{ {\huge\bf {{ basics.name | upper }}} }
+\medskip
+
+\centerline{ {{ basics.birthday | birthday }} $\cdot$ {{ basics.location.city }} }
+\smallskip
+
+\centerline{
+  \href{ mailto:{{ basics.email | escapeUnderline }} }{\faIcon[solid]{envelope} {{ basics.email | escapeUnderline }}}
+  $\cdot$
+  \href{ {{ basics.url }} }{\faIcon[solid]{globe} {{ basics.url }}}
+  {%- for profile in basics.profiles %}
+    $\cdot$
+    \href{ {{ profile.url }} }{ \faIcon[solid]{% raw %}{{% endraw %}{{ profile.network | lower }}{% raw %}}{% endraw %} {{ profile.username }} }
+  {%- endfor %}
+}
+\smallskip
+
+\section*{EXPERIÊNCIA}
+
+{% for job in work %}
+\textbf{ \href{ {{ job.url }} }{ {{ job.name }} } } \hfill {{ job.startDate | periodDate }} -- {{ job.endDate | periodDate }} \\
+{{ job.position | textit }} \hfill \textit{Remoto} {\parfillskip=0pt\par}
+
+\begin{tightlist}
+  {%- for highlight in job.highlights %}
+  \item {{ highlight }}
+  {%- endfor %}
+\end{tightlist}
+
+\medskip
+{% endfor %}
+
+\section*{FORMAÇÃO}
+
+\textbf{ \href{ {{ education[0].url }} }{ {{ education[0].institution }}} } \hfill {{ education[0].startDate | periodDate }} -- {{ education[0].endDate | periodDate }} \\
+{{ education[0].area | textit }} \hfill \textit{Seropédica, RJ} {\parfillskip=0pt\par}
+
+\section*{IDIOMAS}
+
+\begin{tightlist}
+  {%- for language in languages %}
+  \item {{ language.language }}: {{ language.fluency }}.
+  {%- endfor %}
+\end{tightlist}
+
+\end{document}
+
+%% vim: ft=tex

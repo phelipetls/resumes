@@ -1,0 +1,76 @@
+{
+  "basics": {
+    "name": "Phelipe Teles da Silva",
+    "label": "Desenvolvedor Front-end Web",
+    "image": "https://www.gravatar.com/avatar/5f1211751ab0e072f561ad15c991e192",
+    "email": "phelipe_teles@hotmail.com",
+    "phone": "(21) 98047-3484",
+    "url": "https://phelipetls.github.io",
+    "summary": "Desenvolvedor Front-end que se especializa em escrever web apps com React e TypeScript",
+    "birthday": "1996-01-30",
+    "location": {
+      "city": "Rio de Janeiro"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "phelipetls",
+        "url": "https://github.com/phelipetls"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "phelipeteles",
+        "url": "https://www.linkedin.com/in/phelipeteles/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Bornlogic",
+      "position": "Desenvolvedor Front-end",
+      "url": "https://mutual.club",
+      "startDate": "2020-12-01",
+      "endDate": "2022-08-01",
+      "summary": "Liderei o desenvolvimento de projetos como o Central de Negócios e uma biblioteca interna de componentes, usando React e TypeScript.",
+      "highlights": [
+        "Desenvolvi apps em arquitetura de micro-frontends com Single SPA e webpack.",
+        "Liderei o desenvolvimento do app \"Central de Negócios\" em TypeScript com SWR, React Hook Form e Zod.",
+        "Desenvolvi biblioteca de componentes internos usando Floating UI, Base UI e styled-components.",
+        "Escrevi testes com Playwright e react-testing-library.",
+        "Implementei fluxos de autenticação com OAuth interno e APIs de parceiros.",
+        "Colaborei com revisões de código focando em acessibilidade e usabilidade."
+      ]
+    },
+    {
+      "name": "Mutual",
+      "position": "Desenvolvedor Front-end",
+      "url": "https://mutual.club",
+      "startDate": "2020-12-01",
+      "endDate": "2022-08-01",
+      "summary": "Contribuí com manutenção e desenvolvimento de apps web e mobile, utilizando TypeScript e React/React Native.",
+      "highlights": [
+        "Desenvolvi web apps com Create React App e Next.js em TypeScript, utilizando Material UI.",
+        "Escrevi testes de integração com Cypress e React Testing Library.",
+        "Desenvolvi apps mobile com React Native, usando react-native-cli e Expo.",
+        "Melhorei a observabilidade dos apps web e mobile ao integrar Sentry nas pipelines de deploy com GitLab CI/CD.",
+        "Solucionei bugs com Sentry e logs da AWS (CloudWatch e Grafana)."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidade Federal Rural do Rio de Janeiro",
+      "url": "https://portal.ufrrj.br/",
+      "area": "Ciências Econômicas",
+      "studyType": "Bacharelado",
+      "startDate": "2015-01-01",
+      "endDate": "2020-01-01"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Inglês",
+      "fluency": "Fluente"
+    }
+  ]
+}
