@@ -11,6 +11,8 @@
 \usepackage{titlesec}
 \usepackage{fontawesome5}
 
+\setlength{\parfillskip}{0pt}
+
 \titleformat
 {\section} % command
 [display] % shape
@@ -55,7 +57,7 @@
 
 {% for job in work %}
 \textbf{ \href{ {{ job.url }} }{ {{ job.name }} } } \hfill {{ job.startDate | periodDate }} -- {{ job.endDate | periodDate }} \\
-{{ job.position | textit }} \hfill \textit{Remoto} {\parfillskip=0pt\par}
+{{ job.position | textit }} \hfill \textit{Remoto}
 
 \begin{tightlist}
   {%- for highlight in job.highlights %}
@@ -69,7 +71,7 @@
 \section*{FORMAÇÃO}
 
 \textbf{ \href{ {{ education[0].url }} }{ {{ education[0].institution }}} } \hfill {{ education[0].startDate | periodDate }} -- {{ education[0].endDate | periodDate }} \\
-{{ education[0].area | textit }} \hfill \textit{Seropédica, RJ} {\parfillskip=0pt\par}
+{{ education[0].area | textit }} \hfill \textit{Seropédica, RJ}
 
 \section*{IDIOMAS}
 
