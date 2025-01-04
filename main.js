@@ -3,10 +3,19 @@ const jsonResume = require("./resume-ptbr.json");
 const fs = require("fs");
 
 nunjucks
-  .configure({ autoescape: false })
+  .configure({
+    autoescape: false,
+    tags: {
+      blockStart: "<%",
+      blockEnd: "%>",
+      variableStart: "<$",
+      variableEnd: "$>",
+      commentStart: "<#",
+      commentEnd: "#>",
+    },
+  })
   .addFilter("birthday", birthday)
   .addFilter("periodDate", periodDate)
-  .addFilter("textit", italic)
   .addFilter("escapeUnderline", escapeUnderline);
 
 const renderedResume = nunjucks.render("resume-ptbr.njk", jsonResume);
@@ -40,10 +49,6 @@ function periodDate(value) {
   return s[0].toUpperCase() + s.slice(1);
 }
 
-function italic(text) {
-  return `\\textit{${text}}`;
-}
-
 function escapeUnderline(text) {
-  return text.replace(/_/g, '\\_')
+  return text.replace(/_/g, "\\_");
 }

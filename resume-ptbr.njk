@@ -36,49 +36,49 @@
 
 \pagestyle{empty}
 
-\centerline{ {\huge\bf {{ basics.name | upper }}} }
+\centerline{\huge\bf <$ basics.name | upper $>}
 \medskip
 
-\centerline{ {{ basics.birthday | birthday }} $\cdot$ {{ basics.location.city }} }
+\centerline{<$ basics.birthday | birthday $> $\cdot$ <$ basics.location.city $>}
 \smallskip
 
 \centerline{
-  \href{ mailto:{{ basics.email | escapeUnderline }} }{\faIcon[solid]{envelope} {{ basics.email | escapeUnderline }}}
+  \href{mailto:<$ basics.email | escapeUnderline $>}{\faIcon[solid]{envelope} <$ basics.email | escapeUnderline $>}
   $\cdot$
-  \href{ {{ basics.url }} }{\faIcon[solid]{globe} {{ basics.url }}}
-  {%- for profile in basics.profiles %}
+  \href{<$ basics.url $> }{\faIcon[solid]{globe} <$ basics.url $>}
+  {<%- for profile in basics.profiles %>}
     $\cdot$
-    \href{ {{ profile.url }} }{ \faIcon[solid]{% raw %}{{% endraw %}{{ profile.network | lower }}{% raw %}}{% endraw %} {{ profile.username }} }
-  {%- endfor %}
+    \href{<$ profile.url $>}{\faIcon[solid]{<$ profile.network | lower $>} <$ profile.username $>}
+  {<%- endfor %>}
 }
 \smallskip
 
 \section*{EXPERIÊNCIA}
 
-{% for job in work %}
-\textbf{ \href{ {{ job.url }} }{ {{ job.name }} } } \hfill {{ job.startDate | periodDate }} -- {{ job.endDate | periodDate }} \\
-{{ job.position | textit }} \hfill \textit{Remoto}
+{<%- for job in work %>}
+\textbf{\href{ <$ job.url $> }{ <$ job.name $> }} \hfill <$ job.startDate | periodDate $> -- <$ job.endDate | periodDate $> \\
+\textit{<$ job.position $>} \hfill \textit{Remoto}
 
 \begin{tightlist}
-  {%- for highlight in job.highlights %}
-  \item {{ highlight }}
-  {%- endfor %}
+  {<%- for highlight in job.highlights %>}
+  \item <$ highlight $>
+  {<%- endfor %>}
 \end{tightlist}
 
 \medskip
-{% endfor %}
+{<%- endfor %>}
 
 \section*{FORMAÇÃO}
 
-\textbf{ \href{ {{ education[0].url }} }{ {{ education[0].institution }}} } \hfill {{ education[0].startDate | periodDate }} -- {{ education[0].endDate | periodDate }} \\
-{{ education[0].area | textit }} \hfill \textit{Seropédica, RJ}
+\textbf{\href{<$ education[0].url $>}{<$ education[0].institution $>}} \hfill <$ education[0].startDate | periodDate $> -- <$ education[0].endDate | periodDate $> \\
+\textit{<$ education[0].area $>} \hfill \textit{Seropédica, RJ}
 
 \section*{IDIOMAS}
 
 \begin{tightlist}
-  {%- for language in languages %}
-  \item {{ language.language }}: {{ language.fluency }}.
-  {%- endfor %}
+  {<%- for language in languages %>}
+  \item <$ language.language $>: <$ language.fluency $>.
+  {<%- endfor %>}
 \end{tightlist}
 
 \end{document}
