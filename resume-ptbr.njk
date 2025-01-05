@@ -10,6 +10,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{titlesec}
 \usepackage{fontawesome5}
+\usepackage{tabularx}
 
 \pagestyle{empty} % remove page numbers
 
@@ -35,8 +36,10 @@
 {\end{list}}
 
 \newcommand{\resumeSubSectionHeading}[4]{
-  \textbf{#1} \hfill {#2} \\
-  \emph{#3} \hfill \emph{#4}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r@{\extracolsep{\fill}}}
+    \textbf{#1} & #2 \\
+    \emph{\small#3} & \emph{\small#4} \\
+  \end{tabular*}\vspace{-5pt}
 }
 
 \begin{document}
