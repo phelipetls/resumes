@@ -39,8 +39,7 @@
 \begin{center}
   \huge\bf <$ basics.name | upper $>
 \end{center}
-
-\medskip
+\smallskip
 
 \begin{center}
   <$ basics.birthday | birthday $> $\cdot$ <$ basics.location.city $>
@@ -69,14 +68,15 @@
   \item <$ highlight $>
   {<%- endfor %>}
 \end{tightlist}
-
 \medskip
+
 {<%- endfor %>}
 
 \section*{FORMAÇÃO}
 
 \textbf{\href{<$ education[0].url $>}{<$ education[0].institution $>}} \hfill <$ education[0].startDate | periodDate $> -- <$ education[0].endDate | periodDate $> \\
 \textit{<$ education[0].area $>} \hfill \textit{Seropédica, RJ}
+\medskip
 
 \section*{IDIOMAS}
 
