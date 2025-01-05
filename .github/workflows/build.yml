@@ -35,6 +35,9 @@ jobs:
             enumitem
             csquotes
             babel-portuges
+            newtxmath
+            pxfonts
+            tex-gyre
 
       - name: Build
         run: npm run build
