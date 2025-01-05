@@ -34,6 +34,7 @@ jobs:
             tabularx
             enumitem
             csquotes
+            babel-portuges
 
       - name: Build
         run: npm run build
