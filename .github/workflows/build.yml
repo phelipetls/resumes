@@ -36,6 +36,7 @@ jobs:
             csquotes
             babel-portuges
             xcolor
+            xpatch
 
       - name: Build
         run: npm run build
