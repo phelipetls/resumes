@@ -39,6 +39,7 @@ jobs:
             xpatch
             xkeyval
             xstring
+            fontaxes
 
       - name: Build
         run: npm run build
