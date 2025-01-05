@@ -34,6 +34,11 @@
   }
 {\end{list}}
 
+\newcommand{\resumeSubSectionHeading}[4]{
+  \textbf{#1} \hfill {#2} \\
+  \emph{#3} \hfill \emph{#4}
+}
+
 \begin{document}
 
 \begin{center}
@@ -60,8 +65,13 @@
 \section*{EXPERIÊNCIA}
 
 {<%- for job in work %>}
-\textbf{\href{ <$ job.url $> }{ <$ job.name $> }} \hfill <$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $> \\
-\emph{<$ job.position $>} \hfill \emph{Remoto}
+\resumeSubSectionHeading{
+  \href{<$ job.url $>}{<$ job.name $>}
+}{
+  <$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $>
+}{
+  <$ job.position $>
+}{Remoto}
 
 \begin{tightlist}
   {<%- for highlight in job.highlights %>}
@@ -74,8 +84,7 @@
 
 \section*{FORMAÇÃO}
 
-\textbf{\href{<$ education[0].url $>}{<$ education[0].institution $>}} \hfill <$ education[0].startDate | periodDate $> -- <$ education[0].endDate | periodDate $> \\
-\emph{<$ education[0].area $>} \hfill \emph{Seropédica, RJ}
+\resumeSubSectionHeading{\href{<$ education[0].url $>}{<$ education[0].institution $>}}{<$ education[0].startDate | periodDate $> -- <$ education[0].endDate | periodDate $>}{<$ education[0].area $>}{Seropédica, RJ}
 \medskip
 
 \section*{IDIOMAS}
