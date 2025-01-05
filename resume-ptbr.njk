@@ -12,6 +12,7 @@
 \usepackage{fontawesome5}
 \usepackage{tabularx}
 \usepackage{enumitem}
+\usepackage{csquotes}
 
 \pagestyle{empty} % remove page numbers
 
@@ -80,7 +81,7 @@
   {<$ job.position $>}{<$ job.location $>}
 \resumeListStart
   {<%- for highlight in job.highlights %>}
-  \resumeListItem{<$ highlight $>}
+  \resumeListItem{<$ highlight | escapeQuotes $>}
   {<%- endfor %>}
 \resumeListEnd
 \medskip

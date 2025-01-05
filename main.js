@@ -16,6 +16,7 @@ nunjucks
   })
   .addFilter("birthday", birthday)
   .addFilter("periodDate", periodDate)
+  .addFilter("escapeQuotes", escapeQuotes)
   .addFilter("escapeUnderline", escapeUnderline);
 
 const renderedResume = nunjucks.render("resume-ptbr.njk", jsonResume);
@@ -51,4 +52,10 @@ function periodDate(value) {
 
 function escapeUnderline(text) {
   return text.replace(/_/g, "\\_");
+}
+
+function escapeQuotes(text) {
+  return text.replace(/"([^"]+)"/g, (_, p1) => {
+    return `\\enquote{${p1}}`
+  });
 }
