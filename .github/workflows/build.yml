@@ -40,6 +40,7 @@ jobs:
             xkeyval
             xstring
             fontaxes
+            newtx
 
       - name: Build
         run: npm run build
