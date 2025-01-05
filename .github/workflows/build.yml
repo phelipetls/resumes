@@ -1,7 +1,6 @@
 name: Build Resumé and release
+
 on: [push]
-permissions:
-  contents: write
 
 jobs:
   build_and_release_resume:
@@ -39,13 +38,3 @@ jobs:
           jekyll: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate release name
-        id: release_name
-        run: echo "RELEASE_NAME=$(date +'%Y-%m-%d-%H:%M:%S')"
-
-      - name: Release
-        uses: softprops/action-gh-release@v2
-        with:
-          name: "${{ steps.release_name.outputs.RELEASE_NAME }}"
-          files: build/phelipe-teles-resume-ptbr.pdf
