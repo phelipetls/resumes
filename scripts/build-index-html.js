@@ -4,6 +4,7 @@ const fs = require("fs");
 nunjucks.configure({ autoescape: true });
 
 const files = fs.readdirSync("dist");
+
 const renderedIndexPage = nunjucks.render("src/index.njk", {
   files: files.map((file) => {
     return {

@@ -3,4 +3,6 @@ rm -rf dist
 mkdir dist
 mv src/phelipe-teles-resume-ptbr.json dist
 npm run build:pdf
+echo "Files in ./dist folder"
+ls -l dist
 npm run build:index
