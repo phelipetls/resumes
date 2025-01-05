@@ -38,6 +38,7 @@ jobs:
             xcolor
             xpatch
             xkeyval
+            xstring
 
       - name: Build
         run: npm run build
