@@ -35,6 +35,7 @@ jobs:
             enumitem
             csquotes
             babel-portuges
+            psnfss
 
       - name: Build
         run: npm run build
