@@ -61,7 +61,7 @@
 
 {<%- for job in work %>}
 \textbf{\href{ <$ job.url $> }{ <$ job.name $> }} \hfill <$ job.startDate | periodDate $> -- <$ job.endDate | periodDate $> \\
-\textit{<$ job.position $>} \hfill \textit{Remoto}
+\emph{<$ job.position $>} \hfill \emph{Remoto}
 
 \begin{jobHighlights}
   {<%- for highlight in job.highlights %>}
@@ -75,7 +75,7 @@
 \section*{FORMAÇÃO}
 
 \textbf{\href{<$ education[0].url $>}{<$ education[0].institution $>}} \hfill <$ education[0].startDate | periodDate $> -- <$ education[0].endDate | periodDate $> \\
-\textit{<$ education[0].area $>} \hfill \textit{Seropédica, RJ}
+\emph{<$ education[0].area $>} \hfill \emph{Seropédica, RJ}
 \medskip
 
 \section*{IDIOMAS}
