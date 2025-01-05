@@ -1,5 +1,5 @@
 const nunjucks = require("nunjucks");
-const jsonResume = require("./resume-ptbr.json");
+const jsonResume = require("../src/phelipe-teles-resume-ptbr.json");
 const fs = require("fs");
 
 nunjucks
@@ -19,8 +19,8 @@ nunjucks
   .addFilter("escapeQuotes", escapeQuotes)
   .addFilter("escapeUnderline", escapeUnderline);
 
-const renderedResume = nunjucks.render("resume-ptbr.njk", jsonResume);
-fs.writeFileSync("resume-ptbr.tex", renderedResume);
+const renderedResume = nunjucks.render("src/phelipe-teles-resume-ptbr.njk", jsonResume);
+fs.writeFileSync("src/phelipe-teles-resume-ptbr.tex", renderedResume);
 
 function birthday(value) {
   if (!value) {

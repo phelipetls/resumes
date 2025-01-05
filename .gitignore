@@ -6,4 +6,5 @@
 *.gz
 *.log
 node_modules
-resume-ptbr.tex
+src/*.tex
+dist

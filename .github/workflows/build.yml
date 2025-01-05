@@ -17,24 +17,31 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build templates
-        run: npm run build
-
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+      - name: Install TeX dependencies
+        uses: teatimeguest/setup-texlive-action@v3
         with:
-          root_file: resume-ptbr.tex
+          packages: |
+            scheme-basic
+            geometry
+            inputenc
+            babel
+            hyperref
+            parskip
+            palatino
+            fontenc
+            titlesec
+            fontawesome5
+            tabularx
+            enumitem
+            csquotes
 
-      - name: Move pdf to resume folder
-        run: |
-          mkdir -p build/pt
-          mv resume-ptbr.pdf build/phelipe-teles-resume-ptbr.pdf
-          mv resume-ptbr.json build/phelipe-teles-resume-ptbr.json
+      - name: Build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
-          build_dir: build
+          build_dir: dist
           jekyll: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

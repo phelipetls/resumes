@@ -1,0 +1,4 @@
+#!/bin/bash
+npm run build:tex
+pdflatex -output-directory=src src/phelipe-teles-resume-ptbr.tex
+mv src/phelipe-teles-resume-ptbr.pdf dist
