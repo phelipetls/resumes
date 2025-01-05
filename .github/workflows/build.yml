@@ -28,8 +28,8 @@ jobs:
       - name: Move pdf to resume folder
         run: |
           mkdir -p build/pt
-          mv resume-ptbr.pdf build/pt/resume.pdf
-          mv resume-ptbr.json -t build/pt/resume.json
+          mv resume-ptbr.pdf build/phelipe-teles-resume-ptbr.pdf
+          mv resume-ptbr.json build/phelipe-teles-resume-ptbr.json
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
