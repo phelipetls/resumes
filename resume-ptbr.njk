@@ -36,13 +36,18 @@
 
 \pagestyle{empty}
 
-\centerline{\huge\bf <$ basics.name | upper $>}
+\begin{center}
+  \huge\bf <$ basics.name | upper $>
+\end{center}
+
 \medskip
 
-\centerline{<$ basics.birthday | birthday $> $\cdot$ <$ basics.location.city $>}
+\begin{center}
+  <$ basics.birthday | birthday $> $\cdot$ <$ basics.location.city $>
+\end{center}
 \smallskip
 
-\centerline{
+\begin{center}
   \href{mailto:<$ basics.email | escapeUnderline $>}{\faIcon[solid]{envelope} <$ basics.email | escapeUnderline $>}
   $\cdot$
   \href{<$ basics.url $> }{\faIcon[solid]{globe} <$ basics.url $>}
@@ -50,7 +55,7 @@
     $\cdot$
     \href{<$ profile.url $>}{\faIcon[solid]{<$ profile.network | lower $>} <$ profile.username $>}
   {<%- endfor %>}
-}
+\end{center}
 \smallskip
 
 \section*{EXPERIÊNCIA}
