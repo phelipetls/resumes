@@ -30,14 +30,14 @@
       "position": "Desenvolvedor Front-end",
       "url": "https://mutual.club",
       "startDate": "2022-08-01",
-      "summary": "Liderei o desenvolvimento de projetos como o Central de Negócios e uma biblioteca interna de componentes, utilizando React e TypeScript.",
       "location": "Remoto",
       "highlights": [
-        "Desenvolvi apps em arquitetura de micro-frontends com Single SPA e webpack.",
-        "Liderei o desenvolvimento do app \"Central de Negócios\" em TypeScript com SWR, React Hook Form e Zod.",
-        "Desenvolvi biblioteca de componentes internos utilizando Floating UI, Base UI e styled-components.",
-        "Escrevi testes com Playwright e react-testing-library.",
-        "Implementei fluxos de autenticação com OAuth interno e APIs de parceiros."
+        "Liderei o desenvolvimento do novo \"Business Center\" da empresa, utilizando TypeScript e React.",
+        "Fui o principal desenvolvedor da biblioteca de componentes internos que serviu como padrão para os novos produtos, utilizando Floating UI, Base UI e styled-components, e documentado com Storybook.",
+        "Desenvolvi diversos web apps sob uma arquitetura de micro frontend, utilizando Single SPA e webpack.",
+        "Integrei endpoints de REST APIs documentados com Swagger.",
+        "Implementei fluxos de autenticação utilizando o OAuth interno e do TikTok e Facebook SDK.",
+        "Escrevi testes com Playwright e React Testing Library."
       ]
     },
     {
@@ -46,14 +46,12 @@
       "url": "https://mutual.club",
       "startDate": "2020-12-01",
       "endDate": "2022-08-01",
-      "summary": "Contribuí com manutenção e desenvolvimento de apps web e mobile, utilizando TypeScript e React/React Native.",
       "location": "Remoto",
       "highlights": [
         "Desenvolvi web apps com Create React App e Next.js em TypeScript, utilizando Material UI.",
-        "Escrevi testes de integração com Cypress e React Testing Library.",
-        "Desenvolvi apps mobile com React Native, utilizando react-native-cli e Expo.",
-        "Melhorei a observabilidade dos apps web e mobile ao integrar Sentry nas pipelines de deploy com GitLab CI/CD.",
-        "Solucionei bugs com Sentry e logs da AWS (CloudWatch e Grafana)."
+        "Desenvolvi produtos mobile com React Native, utilizando react-native-cli e Expo.",
+        "Melhorei a monitoração de erros dos produtos web e mobile, aumentando a resolução de bugs em produção.",
+        "Escrevi testes de integração com Cypress e React Testing Library."
       ]
     }
   ],
