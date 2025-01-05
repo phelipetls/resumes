@@ -35,6 +35,7 @@ jobs:
             enumitem
             csquotes
             babel-portuges
+            xcolor
 
       - name: Build
         run: npm run build
