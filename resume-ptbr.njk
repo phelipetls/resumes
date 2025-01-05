@@ -24,7 +24,7 @@
 {} % before-code
 [\hrule] % after-code
 
-\newenvironment{jobHighlights}
+\newenvironment{tightlist}
   {\begin{list}
     {$\cdot$}
     {
@@ -63,11 +63,11 @@
 \textbf{\href{ <$ job.url $> }{ <$ job.name $> }} \hfill <$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $> \\
 \emph{<$ job.position $>} \hfill \emph{Remoto}
 
-\begin{jobHighlights}
+\begin{tightlist}
   {<%- for highlight in job.highlights %>}
   \item <$ highlight $>
   {<%- endfor %>}
-\end{jobHighlights}
+\end{tightlist}
 \medskip
 
 {<%- endfor %>}
@@ -80,11 +80,11 @@
 
 \section*{IDIOMAS}
 
-\begin{jobHighlights}
+\begin{tightlist}
   {<%- for language in languages %>}
   \item <$ language.language $>: <$ language.fluency $>.
   {<%- endfor %>}
-\end{jobHighlights}
+\end{tightlist}
 
 \end{document}
 
