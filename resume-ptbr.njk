@@ -65,13 +65,7 @@
 \section*{EXPERIÊNCIA}
 
 {<%- for job in work %>}
-\resumeSubSectionHeading{
-  \href{<$ job.url $>}{<$ job.name $>}
-}{
-  <$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $>
-}{
-  <$ job.position $>
-}{Remoto}
+\resumeSubSectionHeading{\href{<$ job.url $>}{<$ job.name $>}}{<$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $>}{<$ job.position $>}{<$ job.location $>}
 
 \begin{tightlist}
   {<%- for highlight in job.highlights %>}

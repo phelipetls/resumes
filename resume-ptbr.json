@@ -31,6 +31,7 @@
       "url": "https://mutual.club",
       "startDate": "2022-08-01",
       "summary": "Liderei o desenvolvimento de projetos como o Central de Negócios e uma biblioteca interna de componentes, usando React e TypeScript.",
+      "location": "Remoto",
       "highlights": [
         "Desenvolvi apps em arquitetura de micro-frontends com Single SPA e webpack.",
         "Liderei o desenvolvimento do app \"Central de Negócios\" em TypeScript com SWR, React Hook Form e Zod.",
@@ -46,6 +47,7 @@
       "startDate": "2020-12-01",
       "endDate": "2022-08-01",
       "summary": "Contribuí com manutenção e desenvolvimento de apps web e mobile, utilizando TypeScript e React/React Native.",
+      "location": "Remoto",
       "highlights": [
         "Desenvolvi web apps com Create React App e Next.js em TypeScript, utilizando Material UI.",
         "Escrevi testes de integração com Cypress e React Testing Library.",
