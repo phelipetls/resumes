@@ -37,6 +37,7 @@ jobs:
             babel-portuges
             xcolor
             xpatch
+            xkeyval
 
       - name: Build
         run: npm run build
