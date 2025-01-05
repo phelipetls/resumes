@@ -27,7 +27,7 @@ jobs:
             babel
             hyperref
             parskip
-            palatino
+            newpx
             fontenc
             titlesec
             fontawesome5
@@ -35,7 +35,6 @@ jobs:
             enumitem
             csquotes
             babel-portuges
-            psnfss
 
       - name: Build
         run: npm run build
