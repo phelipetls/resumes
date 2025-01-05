@@ -10,7 +10,7 @@ const renderedIndexPage = nunjucks.render("src/index.njk", {
     return {
       name: file,
       href: process.env.CI
-        ? `https://phelipetls.github.io/resume/${file}`
+        ? `https://phelipetls.github.io/resumes/${file}`
         : `http://localhost:3000/${file}`,
     };
   }),
