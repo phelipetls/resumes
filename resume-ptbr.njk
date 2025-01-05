@@ -11,6 +11,7 @@
 \usepackage{titlesec}
 \usepackage{fontawesome5}
 \usepackage{tabularx}
+\usepackage{enumitem}
 
 \pagestyle{empty} % remove page numbers
 
@@ -39,8 +40,12 @@
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r@{\extracolsep{\fill}}}
     \textbf{#1} & #2 \\
     \emph{\small#3} & \emph{\small#4} \\
-  \end{tabular*}\vspace{-5pt}
+  \end{tabular*}
 }
+
+\newcommand{\resumeListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeListEnd}{\end{itemize}}
+\newcommand{\resumeListItem}{\item\small}
 
 \begin{document}
 
@@ -71,11 +76,11 @@
 \resumeSubSectionHeading
   {\href{<$ job.url $>}{<$ job.name $>}}{<$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $>}
   {<$ job.position $>}{<$ job.location $>}
-\begin{tightlist}
+\resumeListStart
   {<%- for highlight in job.highlights %>}
-  \item <$ highlight $>
+  \resumeListItem{<$ highlight $>}
   {<%- endfor %>}
-\end{tightlist}
+\resumeListEnd
 \medskip
 
 {<%- endfor %>}
@@ -89,11 +94,11 @@
 
 \section*{IDIOMAS}
 
-\begin{tightlist}
+\resumeListStart
   {<%- for language in languages %>}
-  \item <$ language.language $>: <$ language.fluency $>.
+  \resumeListItem{<$ language.language $>: <$ language.fluency $>.}
   {<%- endfor %>}
-\end{tightlist}
+\resumeListEnd
 
 \end{document}
 
