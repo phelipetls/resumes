@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -euo
+
 rm -rf dist
 mkdir dist
 mv src/phelipe-teles-resume-ptbr.json dist
