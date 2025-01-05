@@ -47,6 +47,8 @@
 \newcommand{\resumeListEnd}{\end{itemize}}
 \newcommand{\resumeListItem}{\item\small}
 
+\newcommand{\headingIcon}[1]{\raisebox{-0.2ex}{\faIcon[solid]{#1}}}
+
 \begin{document}
 
 \begin{center}
@@ -60,12 +62,12 @@
 \smallskip
 
 \begin{center}
-  \href{mailto:<$ basics.email | escapeUnderline $>}{\faIcon[solid]{envelope} <$ basics.email | escapeUnderline $>}
+  \href{mailto:<$ basics.email | escapeUnderline $>}{\headingIcon{envelope} <$ basics.email | escapeUnderline $>}
   $\cdot$
-  \href{<$ basics.url $> }{\faIcon[solid]{globe} <$ basics.url $>}
+  \href{<$ basics.url $> }{\headingIcon{globe} <$ basics.url $>}
   {<%- for profile in basics.profiles %>}
     $\cdot$
-    \href{<$ profile.url $>}{\faIcon[solid]{<$ profile.network | lower $>} <$ profile.username $>}
+    \href{<$ profile.url $>}{\headingIcon{<$ profile.network | lower $>} <$ profile.username $>}
   {<%- endfor %>}
 \end{center}
 \smallskip
