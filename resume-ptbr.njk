@@ -68,8 +68,9 @@
 \section*{EXPERIÊNCIA}
 
 {<%- for job in work %>}
-\resumeSubSectionHeading{\href{<$ job.url $>}{<$ job.name $>}}{<$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $>}{<$ job.position $>}{<$ job.location $>}
-
+\resumeSubSectionHeading
+  {\href{<$ job.url $>}{<$ job.name $>}}{<$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $>}
+  {<$ job.position $>}{<$ job.location $>}
 \begin{tightlist}
   {<%- for highlight in job.highlights %>}
   \item <$ highlight $>
@@ -81,7 +82,9 @@
 
 \section*{FORMAÇÃO}
 
-\resumeSubSectionHeading{\href{<$ education[0].url $>}{<$ education[0].institution $>}}{<$ education[0].startDate | periodDate $> -- <$ education[0].endDate | periodDate $>}{<$ education[0].area $>}{<$ education[0].location $>}
+\resumeSubSectionHeading
+  {\href{<$ education[0].url $>}{<$ education[0].institution $>}}{<$ education[0].startDate | periodDate $> -- <$ education[0].endDate | periodDate $>}
+  {<$ education[0].area $>}{<$ education[0].location $>}
 \medskip
 
 \section*{IDIOMAS}
