@@ -1,0 +1,75 @@
+{
+  "basics": {
+    "name": "Phelipe Teles da Silva",
+    "label": "Desenvolvedor Front-end Web",
+    "image": "https://www.gravatar.com/avatar/5f1211751ab0e072f561ad15c991e192",
+    "email": "phelipe_teles@hotmail.com",
+    "phone": "(21) 98047-3484",
+    "url": "https://phelipetls.github.io",
+    "summary": "Desenvolvedor Front-end que se especializa em escrever web apps com React e TypeScript",
+    "birthday": "1996-01-30",
+    "location": {
+      "city": "Rio de Janeiro"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "phelipetls",
+        "url": "https://github.com/phelipetls"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "phelipeteles",
+        "url": "https://www.linkedin.com/in/phelipeteles/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Bornlogic",
+      "position": "Desenvolvedor Front-end",
+      "url": "https://bornlogic.com",
+      "startDate": "2022-08-01",
+      "location": "Remoto",
+      "highlights": [
+        "Liderei o desenvolvimento do novo \"Business Center\" da empresa, utilizando TypeScript e React.",
+        "Fui o principal desenvolvedor da biblioteca de componentes internos que serviu como padrão para os novos produtos, utilizando Floating UI, Base UI e styled-components, e documentado com Storybook.",
+        "Desenvolvi diversos web apps sob uma arquitetura de micro frontend, utilizando Single SPA e webpack.",
+        "Integrei endpoints de REST APIs documentados com Swagger.",
+        "Implementei fluxos de autenticação utilizando o OAuth interno e do TikTok e Facebook SDK.",
+        "Escrevi testes com Playwright e React Testing Library."
+      ]
+    },
+    {
+      "name": "Mutual",
+      "position": "Desenvolvedor Front-end",
+      "url": "https://mutual.club",
+      "startDate": "2020-12-01",
+      "endDate": "2022-08-01",
+      "location": "Remoto",
+      "highlights": [
+        "Desenvolvi web apps com Create React App e Next.js em TypeScript, utilizando Material UI.",
+        "Desenvolvi produtos mobile com React Native, utilizando react-native-cli e Expo.",
+        "Melhorei a monitoração de erros dos produtos web e mobile, aumentando a resolução de bugs em produção.",
+        "Escrevi testes de integração com Cypress e React Testing Library."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidade Federal Rural do Rio de Janeiro",
+      "url": "https://portal.ufrrj.br/",
+      "area": "Ciências Econômicas",
+      "studyType": "Bacharelado",
+      "startDate": "2015-01-01",
+      "endDate": "2020-01-01",
+      "location": "Seropédica, RJ"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Inglês",
+      "fluency": "Fluente"
+    }
+  ]
+}
