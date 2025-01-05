@@ -60,7 +60,7 @@
 \section*{EXPERIÊNCIA}
 
 {<%- for job in work %>}
-\textbf{\href{ <$ job.url $> }{ <$ job.name $> }} \hfill <$ job.startDate | periodDate $> -- <$ job.endDate | periodDate $> \\
+\textbf{\href{ <$ job.url $> }{ <$ job.name $> }} \hfill <$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $> \\
 \emph{<$ job.position $>} \hfill \emph{Remoto}
 
 \begin{jobHighlights}

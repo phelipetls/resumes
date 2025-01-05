@@ -29,8 +29,7 @@
       "name": "Bornlogic",
       "position": "Desenvolvedor Front-end",
       "url": "https://mutual.club",
-      "startDate": "2020-12-01",
-      "endDate": "2022-08-01",
+      "startDate": "2022-08-01",
       "summary": "Liderei o desenvolvimento de projetos como o Central de Negócios e uma biblioteca interna de componentes, usando React e TypeScript.",
       "highlights": [
         "Desenvolvi apps em arquitetura de micro-frontends com Single SPA e webpack.",
