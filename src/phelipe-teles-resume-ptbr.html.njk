@@ -71,12 +71,15 @@
       line-height: 1.2;
     }
 
-    .subsectionHeader tr td:first-child {
-      font-weight: 500;
+    .subsectionHeader tr:first-child td:first-child {
+      font-weight: 700;
     }
 
     .subsectionHeader tr td:last-child {
       text-align: right;
+    }
+
+    .subsectionHeader tr:last-child td:last-child {
       font-style: italic;
     }
 
@@ -120,15 +123,17 @@
 
   <ul class="subheader">
     <li>
-      <a href="mailto:{{ basics.email }}">
-        <i class="fa-solid fa-envelope"></i>{{ basics.email }}</a>
+      <i class="fa-solid fa-envelope"></i>
+      <a href="mailto:{{ basics.email }}">{{ basics.email }}</a>
     </li>
     <li>
-      <i class="fa-solid fa-globe"></i><a href="{{ basics.url }}">{{ basics.url }}</a>
+      <i class="fa-solid fa-globe"></i>
+      <a href="{{ basics.url }}">{{ basics.url }}</a>
     </li>
     {% for profile in basics.profiles %}
     <li>
-      <i class="fa-brands fa-{{ profile.network | lower }}"></i><a href="{{ profile.url }}">{{ profile.username }}</a>
+      <i class="fa-brands fa-{{ profile.network | lower }}"></i>
+      <a href="{{ profile.url }}">{{ profile.username }}</a>
     </li>
     {% endfor %}
   </ul>
@@ -157,22 +162,22 @@
   {% endfor %}
 
   <h2>PROJETOS</h2>
-  <ul>
-    {% for project in projects %}
-      <table class="subsectionHeader">
-        <tbody>
-          <tr>
-            <td>{{ project.name }}</td>
-            <td>{{ project.startDate | formatPeriod(project.endDate) }}</td>
-          </tr>
-        </tbody>
-      </table>
+  {% for project in projects %}
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td>{{ project.name }}</td>
+          <td>{{ project.startDate | formatPeriod(project.endDate) }}</td>
+        </tr>
+      </tbody>
+    </table>
 
+    <ul>
       {% for highlight in project.highlights %}
         <li>{{ highlight }}</li>
       {% endfor %}
-    {% endfor %}
-  </ul>
+    </ul>
+  {% endfor %}
 
   <h2>IDIOMAS</h2>
   {% for language in languages %}
