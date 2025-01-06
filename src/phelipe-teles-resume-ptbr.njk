@@ -85,7 +85,7 @@
 
 {<%- for job in work %>}
 \resumeSubSectionHeading
-  {\href{<$ job.url $>}{<$ job.name $>}}{<$ job.startDate | periodDate $> -- <$ "Presente" if not job.endDate else job.endDate | periodDate $>}
+  {\href{<$ job.url $>}{<$ job.name $>}}{<$ job.startDate | formatPeriod(job.endDate) $>}
   {<$ job.position $>}{<$ job.location $>}
 \resumeListStart
   {<%- for highlight in job.highlights %>}
@@ -99,7 +99,7 @@
 
 {<%- for project in projects %>}
 \resumeSubSectionProjectHeading
-  {<$ project.name $>}{<$ project.startDate | periodDate $> -- <$ "Presente" if not project.endDate else project.endDate | periodDate $>}
+  {<$ project.name $>}{<$ project.startDate | formatPeriod(project.endDate) $>}
 \resumeListStart
   {<%- for highlight in project.highlights %>}
   \resumeListItem{<$ highlight | escapeQuotes $>}
@@ -111,7 +111,7 @@
 \section*{FORMAÇÃO}
 
 \resumeSubSectionHeading
-  {\href{<$ education[0].url $>}{<$ education[0].institution $>}}{<$ education[0].startDate | periodDate $> -- <$ education[0].endDate | periodDate $>}
+  {\href{<$ education[0].url $>}{<$ education[0].institution $>}}{<$ education[0].startDate | formatPeriod(education[0].endDate) $>}
   {<$ education[0].area $>}{<$ education[0].location $>}
 \medskip
 

@@ -15,7 +15,7 @@ nunjucks
     },
   })
   .addFilter("birthday", birthday)
-  .addFilter("periodDate", periodDate)
+  .addFilter("formatPeriod", formatPeriod)
   .addFilter("escapeQuotes", escapeQuotes)
   .addFilter("escapeUnderline", escapeUnderline);
 
@@ -36,9 +36,17 @@ function birthday(value) {
   });
 }
 
-function periodDate(value) {
+function formatPeriod(start, end) {
+  if (!start && !end) {
+    throw new Error("Unexpected missing start and end dates");
+  }
+
+  return `${formatDatePeriod(start)} -- ${end ? formatDatePeriod(end) : 'Presente'}`
+}
+
+function formatDatePeriod(value) {
   if (!value) {
-    throw new Error("Unexpected empty date");
+    throw new Error("Unexpected missing date");
   }
 
   const [year, month, day] = value.split("-");
@@ -47,6 +55,7 @@ function periodDate(value) {
     month: "short",
     year: "numeric",
   });
+
   return s[0].toUpperCase() + s.slice(1);
 }
 
