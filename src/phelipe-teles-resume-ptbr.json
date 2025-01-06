@@ -34,10 +34,10 @@
       "highlights": [
         "Liderei o desenvolvimento do novo \"Business Center\" da empresa, utilizando TypeScript e React.",
         "Fui o principal desenvolvedor da biblioteca de componentes internos que serviu como padrão para os novos produtos, utilizando Floating UI, Base UI e styled-components, e documentado com Storybook.",
-        "Desenvolvi diversos web apps sob uma arquitetura de micro frontend, utilizando Single SPA e webpack.",
-        "Integrei endpoints de REST APIs documentados com Swagger.",
-        "Implementei fluxos de autenticação utilizando o OAuth interno e do TikTok e Facebook SDK.",
-        "Escrevi testes com Playwright e React Testing Library."
+        "Desenvolvi diversos aplicativos para web sob uma arquitetura de micro frontend, utilizando Single SPA e webpack.",
+        "Integrei endpoints de APIs REST documentados com Swagger.",
+        "Implementei fluxos de autenticação baseados em JWT e OAuth para o sistema interno, do TikTok e do Facebook.",
+        "Escrevi testes de integração com Playwright e React Testing Library."
       ]
     },
     {
@@ -48,7 +48,7 @@
       "endDate": "2022-08-01",
       "location": "Remoto",
       "highlights": [
-        "Desenvolvi web apps com Create React App e Next.js em TypeScript, utilizando Material UI.",
+        "Desenvolvi aplicativos para web com Create React App e Next.js em TypeScript, utilizando Material UI.",
         "Desenvolvi produtos mobile com React Native, utilizando react-native-cli e Expo.",
         "Melhorei a monitoração de erros dos produtos web e mobile, aumentando a resolução de bugs em produção.",
         "Escrevi testes de integração com Cypress e React Testing Library."
