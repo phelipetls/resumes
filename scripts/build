@@ -6,6 +6,7 @@ rm -rf dist
 mkdir dist
 cp src/phelipe-teles-resume-ptbr.json dist
 npm run build:pdf
+npm run build:html
 echo "Files in ./dist folder"
 ls -l dist
 npm run build:index

@@ -6,6 +6,7 @@
     "build:tex": "node scripts/build-resume-tex.js",
     "build:index": "node scripts/build-index-html.js",
     "build:pdf": "./scripts/build-pdf",
+    "build:html": "./scripts/build-html",
     "build": "./scripts/build",
     "preview": "serve -l 3000 dist"
   },
