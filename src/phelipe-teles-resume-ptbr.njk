@@ -36,11 +36,20 @@
   }
 {\end{list}}
 
+\newcommand{\resumeSubSectionHeadingTableStart}{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r@{\extracolsep{\fill}}}}
+\newcommand{\resumeSubSectionHeadingTableEnd}{\end{tabular*}}
+
 \newcommand{\resumeSubSectionHeading}[4]{
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r@{\extracolsep{\fill}}}
+  \resumeSubSectionHeadingTableStart
     \textbf{#1} & #2 \\
     \emph{\small#3} & \emph{\small#4} \\
-  \end{tabular*}
+  \resumeSubSectionHeadingTableEnd
+}
+
+\newcommand{\resumeSubSectionProjectHeading}[2]{
+  \resumeSubSectionHeadingTableStart
+    \textbf{#1} & #2
+  \resumeSubSectionHeadingTableEnd
 }
 
 \newcommand{\resumeListStart}{\begin{itemize}[leftmargin=*]}
@@ -84,7 +93,19 @@
   {<%- endfor %>}
 \resumeListEnd
 \medskip
+{<%- endfor %>}
 
+\section*{PROJETOS}
+
+{<%- for project in projects %>}
+\resumeSubSectionProjectHeading
+  {<$ project.name $>}{<$ project.startDate | periodDate $> -- <$ "Presente" if not project.endDate else project.endDate | periodDate $>}
+\resumeListStart
+  {<%- for highlight in project.highlights %>}
+  \resumeListItem{<$ highlight | escapeQuotes $>}
+  {<%- endfor %>}
+\resumeListEnd
+\medskip
 {<%- endfor %>}
 
 \section*{FORMAÇÃO}
