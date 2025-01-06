@@ -128,7 +128,7 @@
     </li>
     <li>
       <i class="fa-solid fa-globe"></i>
-      <a href="{{ basics.url }}">{{ basics.url }}</a>
+      <a href="{{ basics.url }}">{{ basics.url | replace("https://", "") }}</a>
     </li>
     {% for profile in basics.profiles %}
     <li>
