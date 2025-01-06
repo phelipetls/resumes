@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+
+  <style>
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-family: "Palatino Linotype", Palatino, serif;
+      line-height: 1.4;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 0.5rem 0;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-bottom: 1px solid #000;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.2rem;
+    }
+
+    .subheader {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .subheader li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .subheader li:not(:last-of-type):after {
+      content: "·"
+    }
+
+    .subheader a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .subheader a:hover {
+      text-decoration: underline;
+    }
+
+    .subsectionHeader {
+      width: 100%;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .subsectionHeader td {
+      padding: 0;
+      line-height: 1.2;
+    }
+
+    .subsectionHeader tr:first-child td:first-child {
+      font-weight: 700;
+    }
+
+    .subsectionHeader tr td:last-child {
+      text-align: right;
+    }
+
+    .subsectionHeader tr:nth-child(2) {
+      font-style: italic;
+    }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    i {
+      font-size: 0.9rem;
+    }
+
+    @media print {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+  <title>Resumé | Phelipe Teles</title>
+</head>
+<body>
+  <h1>PHELIPE TELES DA SILVA</h1>
+
+  <ul class="subheader">
+    <li>30 de jan. de 1996</li>
+    <li>Rio de Janeiro, RJ</li>
+  </ul>
+
+  <ul class="subheader">
+    <li>
+      <i class="fa-solid fa-envelope"></i>
+      <a href="mailto:phelipe_teles@hotmail.com">phelipe_teles@hotmail.com</a>
+    </li>
+    <li>
+      <i class="fa-solid fa-globe"></i>
+      <a href="https://phelipetls.github.io">phelipetls.github.io</a>
+    </li>
+    
+    <li>
+      <i class="fa-brands fa-github"></i>
+      <a href="https://github.com/phelipetls">phelipetls</a>
+    </li>
+    
+    <li>
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/phelipeteles/">phelipeteles</a>
+    </li>
+    
+  </ul>
+
+  <h2>EXPERIÊNCIA</h2>
+  
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td><a href="https://bornlogic.com">Bornlogic</a></td>
+          <td>Ago. de 2022 -- Presente</td>
+        </tr>
+
+        <tr>
+          <td>Desenvolvedor Front-end</td>
+          <td>Remoto</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      
+      <li>Liderei o desenvolvimento do novo &quot;Business Center&quot; da empresa, utilizando TypeScript e React.</li>
+      
+      <li>Fui o principal desenvolvedor da biblioteca de componentes internos que serviu como padrão para os novos produtos, utilizando Floating UI, Base UI e styled-components, e documentado com Storybook.</li>
+      
+      <li>Desenvolvi diversos aplicativos para web sob uma arquitetura de micro frontend, utilizando Single SPA e webpack.</li>
+      
+      <li>Integrei endpoints de APIs REST documentados com Swagger.</li>
+      
+      <li>Implementei fluxos de autenticação baseados em JWT e OAuth para o sistema interno, do TikTok e do Facebook.</li>
+      
+      <li>Escrevi testes de integração com Playwright e React Testing Library.</li>
+      
+    </ul>
+  
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td><a href="https://mutual.club">Mutual</a></td>
+          <td>Dez. de 2020 -- Ago. de 2022</td>
+        </tr>
+
+        <tr>
+          <td>Desenvolvedor Front-end</td>
+          <td>Remoto</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      
+      <li>Desenvolvi aplicativos para web com Create React App e Next.js em TypeScript, utilizando Material UI.</li>
+      
+      <li>Desenvolvi produtos mobile com React Native, utilizando react-native-cli e Expo.</li>
+      
+      <li>Melhorei a monitoração de erros dos produtos web e mobile, aumentando a resolução de bugs em produção.</li>
+      
+      <li>Escrevi testes de integração com Cypress e React Testing Library.</li>
+      
+    </ul>
+  
+
+  <h2>PROJETOS</h2>
+  
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td>Blog e site pessoal</td>
+          <td>Jan. de 2019 -- Presente</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      
+        <li>Desenvolvi um site estático utilizando Astro e Tailwind CSS, hospedado com GitHub Pages.</li>
+      
+        <li>Implementei testes de integração com Playwright para validar a estabilidade e usabilidade do site.</li>
+      
+        <li>Escrevi artigos sobre desenvolvimento web, ferramentas para desenvolvedores, matemática, estatística e visualização de dados.</li>
+      
+        <li>Adicionei exemplos de código interativos aos artigos utilizando CodeSandbox e React, facilitando o aprendizado prático para leitores.</li>
+      
+    </ul>
+  
+
+  <h2>IDIOMAS</h2>
+  
+    <ul>
+      <li>Inglês: Fluente</li>
+    </ul>
+  
+</body>
