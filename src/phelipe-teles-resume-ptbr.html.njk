@@ -38,7 +38,7 @@
       margin: 0.5rem 0;
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.5rem;
       font-size: 0.9rem;
     }
 
@@ -46,6 +46,10 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+    }
+
+    .subheader li:not(:last-of-type):after {
+      content: "·"
     }
 
     .subheader a {
