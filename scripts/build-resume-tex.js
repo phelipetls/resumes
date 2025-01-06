@@ -19,7 +19,7 @@ nunjucks
   .addFilter("escapeQuotes", escapeQuotes)
   .addFilter("escapeUnderline", escapeUnderline);
 
-const renderedResume = nunjucks.render("src/phelipe-teles-resume-ptbr.njk", jsonResume);
+const renderedResume = nunjucks.render("src/phelipe-teles-resume-ptbr.tex.njk", jsonResume);
 fs.writeFileSync("src/phelipe-teles-resume-ptbr.tex", renderedResume);
 
 function birthday(value) {
