@@ -9,7 +9,8 @@
     "url": "https://phelipetls.github.io",
     "birthday": "1996-01-30",
     "location": {
-      "city": "Rio de Janeiro"
+      "city": "Rio de Janeiro",
+      "region": "RJ"
     },
     "profiles": [
       {
