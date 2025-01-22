@@ -34,7 +34,7 @@
       "location": "Remoto",
       "highlights": [
         "Liderei o desenvolvimento do novo \"Business Center\" da empresa, utilizando TypeScript e React.",
-        "Fui o principal desenvolvedor da biblioteca de componentes internos que serviu como padrão para os novos produtos, utilizando Floating UI, Base UI e styled-components, e documentado com Storybook.",
+        "Fui o principal desenvolvedor da biblioteca interna de componentes reusáveis, utilizando Floating UI, Base UI e styled-components, documentada com Storybook.",
         "Desenvolvi diversos aplicativos para web sob uma arquitetura de micro frontend, utilizando Single SPA e webpack.",
         "Integrei endpoints de APIs REST documentados com Swagger.",
         "Implementei fluxos de autenticação baseados em JWT e OAuth para o sistema interno, do TikTok e do Facebook.",
