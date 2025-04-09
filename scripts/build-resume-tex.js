@@ -31,7 +31,7 @@ const renderedResumePtBr = nunjucks.render("src/resume.tex.njk", {
     },
   },
 });
-fs.writeFileSync(renderedResumePtBr, "src/phelipe-teles-resume-pt-br.tex");
+fs.writeFileSync("src/phelipe-teles-resume-pt-br.tex", renderedResumePtBr);
 
 const renderedResumeEnUs = nunjucks.render("src/resume.tex.njk", {
   ...jsonResumeEnUs,
@@ -44,7 +44,7 @@ const renderedResumeEnUs = nunjucks.render("src/resume.tex.njk", {
     },
   },
 });
-fs.writeFileSync(renderedResumeEnUs, "src/phelipe-teles-resume-en-us.tex");
+fs.writeFileSync("src/phelipe-teles-resume-en-us.tex", renderedResumeEnUs);
 
 function birthday(value) {
   if (!value) {
