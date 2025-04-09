@@ -41,6 +41,7 @@ jobs:
             xstring
             fontaxes
             newtx
+            textcomp
 
       - name: Build
         run: npm run build
