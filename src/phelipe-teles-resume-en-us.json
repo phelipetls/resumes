@@ -1,0 +1,88 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Phelipe Teles da Silva",
+    "label": "Front-end Web Developer",
+    "image": "https://www.gravatar.com/avatar/5f1211751ab0e072f561ad15c991e192",
+    "email": "phelipe_teles@hotmail.com",
+    "phone": "(21) 98047-3484",
+    "url": "https://phelipetls.github.io",
+    "birthday": "1996-01-30",
+    "location": {
+      "city": "Rio de Janeiro",
+      "region": "RJ"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "phelipetls",
+        "url": "https://github.com/phelipetls"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "phelipeteles",
+        "url": "https://www.linkedin.com/in/phelipeteles/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Bornlogic",
+      "position": "Front-end Developer",
+      "url": "https://bornlogic.com",
+      "startDate": "2022-08-01",
+      "endDate": "2025-03-01",
+      "location": "Remote",
+      "highlights": [
+        "Led front-end development of the company's new \"Business Center\", using TypeScript and React.",
+        "Helped standardize the platform's user interface with the development of the internal reusable components library, documented in Storybook.",
+        "Collaborated on the development of various applications under the micro-frontends architecture, using Single SPA and webpack.",
+        "Contributed to the platform's stability by writing integration tests with Playwright and React Testing Library."
+      ]
+    },
+    {
+      "name": "Mutual",
+      "position": "Front-end Developer",
+      "url": "https://mutual.club",
+      "startDate": "2020-12-01",
+      "endDate": "2022-08-01",
+      "location": "Remote",
+      "highlights": [
+        "Developed web applications with Create React App and Next.js in TypeScript, using Material UI.",
+        "Developed mobile products with React Native, using react-native-cli and Expo.",
+        "Improved error monitoring for web and mobile applications using Sentry and GitLab CI/CD, facilitating the identification and resolution of bugs in production.",
+        "Wrote integration tests for web and mobile applications using Cypress and React Testing Library."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Federal Rural University of Rio de Janeiro",
+      "url": "https://portal.ufrrj.br/",
+      "area": "Economics",
+      "studyType": "Bachelor's Degree",
+      "startDate": "2015-01-01",
+      "endDate": "2020-01-01",
+      "location": "Seropédica, RJ"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Personal Blog and Website",
+      "startDate": "2019-01-01",
+      "description": "",
+      "highlights": [
+        "Developed a static website using Astro and Tailwind CSS, hosted with GitHub Pages.",
+        "Implemented integration tests with Playwright to validate the site's stability and usability.",
+        "Wrote articles about web development, developer tools, mathematics, statistics, and data visualization.",
+        "Added interactive code examples to articles using CodeSandbox and React, facilitating practical learning for readers."
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ]
+}
