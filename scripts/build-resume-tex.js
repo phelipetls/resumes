@@ -1,5 +1,6 @@
 const nunjucks = require("nunjucks");
-const jsonResume = require("../src/phelipe-teles-resume-ptbr.json");
+const jsonResumePtBr = require("../src/phelipe-teles-resume-pt-br.json");
+const jsonResumeEnUs = require("../src/phelipe-teles-resume-en-us.json");
 const fs = require("fs");
 
 nunjucks
@@ -19,8 +20,31 @@ nunjucks
   .addFilter("escapeQuotes", escapeQuotes)
   .addFilter("escapeUnderline", escapeUnderline);
 
-const renderedResume = nunjucks.render("src/phelipe-teles-resume-ptbr.tex.njk", jsonResume);
-fs.writeFileSync("src/phelipe-teles-resume-ptbr.tex", renderedResume);
+const renderedResumePtBr = nunjucks.render("src/resume.tex.njk", {
+  ...jsonResumePtBr,
+  translations: {
+    sections: {
+      work: "EXPERIÊNCIA",
+      projects: "PROJETOS",
+      education: "FORMAÇÃO",
+      languages: "IDIOMAS",
+    },
+  },
+});
+fs.writeFileSync(renderedResumePtBr, "src/phelipe-teles-resume-pt-br.tex");
+
+const renderedResumeEnUs = nunjucks.render("src/resume.tex.njk", {
+  ...jsonResumeEnUs,
+  translations: {
+    sections: {
+      work: "EXPERIENCE",
+      projects: "PROJECTS",
+      education: "EDUCATION",
+      languages: "LANGUAGES",
+    },
+  },
+});
+fs.writeFileSync(renderedResumeEnUs, "src/phelipe-teles-resume-en-us.tex");
 
 function birthday(value) {
   if (!value) {
@@ -41,7 +65,7 @@ function formatPeriod(start, end) {
     throw new Error("Unexpected missing start and end dates");
   }
 
-  return `${formatDatePeriod(start)} -- ${end ? formatDatePeriod(end) : 'Presente'}`
+  return `${formatDatePeriod(start)} -- ${end ? formatDatePeriod(end) : "Presente"}`;
 }
 
 function formatDatePeriod(value) {
@@ -65,6 +89,6 @@ function escapeUnderline(text) {
 
 function escapeQuotes(text) {
   return text.replace(/"([^"]+)"/g, (_, p1) => {
-    return `\\enquote{${p1}}`
+    return `\\enquote{${p1}}`;
   });
 }

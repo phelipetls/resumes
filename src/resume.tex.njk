@@ -71,7 +71,7 @@
 \end{center}
 \smallskip
 
-\section*{EXPERIÊNCIA}
+\section*{<$ translations.sections.work $>}
 
 {<%- for job in work %>}
 \resumeSubSectionHeading
@@ -85,7 +85,7 @@
 \medskip
 {<%- endfor %>}
 
-\section*{PROJETOS}
+\section*{<$ translations.sections.projects $>}
 
 {<%- for project in projects %>}
 \resumeSubSectionProjectHeading
@@ -98,14 +98,14 @@
 \medskip
 {<%- endfor %>}
 
-\section*{FORMAÇÃO}
+\section*{<$ translations.sections.education $>}
 
 \resumeSubSectionHeading
   {\href{<$ education[0].url $>}{<$ education[0].institution $>}}{<$ education[0].startDate | formatPeriod(education[0].endDate) $>}
   {<$ education[0].area $>}{<$ education[0].location $>}
 \medskip
 
-\section*{IDIOMAS}
+\section*{<$ translations.sections.languages $>}
 
 \resumeListStart
   {<%- for language in languages %>}

@@ -3,5 +3,8 @@
 set -euo
 
 npm run build:tex
-pdflatex -output-directory=src src/phelipe-teles-resume-ptbr.tex
-mv src/phelipe-teles-resume-ptbr.pdf dist
+pdflatex -output-directory=src src/phelipe-teles-resume-pt-br.tex
+mv src/phelipe-teles-resume-pt-br.pdf dist
+
+pdflatex -output-directory=src src/phelipe-teles-resume-en-us.tex
+mv src/phelipe-teles-resume-en-us.pdf dist
