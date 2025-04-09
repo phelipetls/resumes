@@ -135,7 +135,7 @@
     {% endfor %}
   </ul>
 
-  <h2>{% translations.sections.work %}</h2>
+  <h2>{{ translations.sections.work }}</h2>
   {% for job in work %}
     <table class="subsectionHeader">
       <tbody>
@@ -158,7 +158,7 @@
     </ul>
   {% endfor %}
 
-  <h2>{% translations.sections.projects %}</h2>
+  <h2>{{ translations.sections.projects }}</h2>
   {% for project in projects %}
     <table class="subsectionHeader">
       <tbody>
@@ -176,7 +176,7 @@
     </ul>
   {% endfor %}
 
-  <h2>{% translations.sections.education %}</h2>
+  <h2>{{ translations.sections.education }}</h2>
   <table class="subsectionHeader">
     <tbody>
       <tr>
@@ -191,7 +191,7 @@
     </tbody>
   </table>
 
-  <h2>{% translations.sections.languages %}</h2>
+  <h2>{{ translations.sections.languages }}</h2>
   {% for language in languages %}
     <ul>
       <li>{{ language.language }}: {{ language.fluency }}</li>
