@@ -95,7 +95,5 @@ function escapeQuotes(text) {
 }
 
 function escapeApostrophe(text) {
-  return text.replace(/'/g, (_, p1) => {
-    return `\\textquotesingle `;
-  });
+  return text.replace(/'/g, `\\textquotesingle `);
 }
