@@ -34,9 +34,9 @@
       "endDate": "2025-03-01",
       "location": "Remote",
       "highlights": [
-        "Led front-end development of the company's new \"Business Center\", using TypeScript and React.",
-        "Helped standardize the platform's user interface with the development of the internal reusable components library, documented in Storybook.",
-        "Collaborated on the development of various applications under the micro-frontends architecture, using Single SPA and webpack.",
+        "Led the front-end development for the company's new Business Center, building the user interface and core features using React and TypeScript.",
+        "Standardized the platform's UI by developing a reusable component library with comprehensive Storybook documentation.",
+        "Collaborated to implement and maintain the micro-frontends architecture foundation using Single SPA and webpack, supporting multiple application teams.",
         "Contributed to the platform's stability by writing integration tests with Playwright and React Testing Library."
       ]
     },
