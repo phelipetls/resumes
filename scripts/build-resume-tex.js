@@ -18,7 +18,8 @@ nunjucks
   .addFilter("birthday", birthday)
   .addFilter("formatPeriod", formatPeriod)
   .addFilter("escapeQuotes", escapeQuotes)
-  .addFilter("escapeUnderline", escapeUnderline);
+  .addFilter("escapeUnderline", escapeUnderline)
+  .addFilter("escapeApostrophe", escapeApostrophe);
 
 const renderedResumePtBr = nunjucks.render("src/resume.tex.njk", {
   ...jsonResumePtBr,
@@ -90,5 +91,11 @@ function escapeUnderline(text) {
 function escapeQuotes(text) {
   return text.replace(/"([^"]+)"/g, (_, p1) => {
     return `\\enquote{${p1}}`;
+  });
+}
+
+function escapeApostrophe(text) {
+  return text.replace(/'/g, (_, p1) => {
+    return `\\textquotesingle`;
   });
 }

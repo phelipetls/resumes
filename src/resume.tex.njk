@@ -79,7 +79,7 @@
   {<$ job.position $>}{<$ job.location $>}
 \resumeListStart
   {<%- for highlight in job.highlights %>}
-  \resumeListItem{<$ highlight | escapeQuotes $>}
+  \resumeListItem{<$ highlight | escapeQuotes | escapeApostrophe $>}
   {<%- endfor %>}
 \resumeListEnd
 \medskip
@@ -92,7 +92,7 @@
   {<$ project.name $>}{<$ project.startDate | formatPeriod(project.endDate) $>}
 \resumeListStart
   {<%- for highlight in project.highlights %>}
-  \resumeListItem{<$ highlight | escapeQuotes $>}
+  \resumeListItem{<$ highlight | escapeQuotes | escapeApostrophe $>}
   {<%- endfor %>}
 \resumeListEnd
 \medskip
