@@ -3,12 +3,14 @@ const jsonResumePtBr = require("../src/phelipe-teles-resume-pt-br.json");
 const jsonResumeEnUs = require("../src/phelipe-teles-resume-en-us.json");
 const fs = require("fs");
 
-nunjucks
-  .configure({ autoescape: true })
-  .addFilter("birthday", birthday)
-  .addFilter("formatPeriod", formatPeriod);
+function setupNunjucks(language) {
+  return nunjucks
+    .configure({ autoescape: true })
+    .addFilter("birthday", createBirthdayFormatter(language))
+    .addFilter("formatPeriod", createPeriodFormatter(language));
+}
 
-const renderedResumePtBr = nunjucks.render("src/resume.html.njk", {
+const renderedResumePtBr = setupNunjucks("pt-BR").render("src/resume.html.njk", {
   ...jsonResumePtBr,
   translations: {
     sections: {
@@ -21,7 +23,7 @@ const renderedResumePtBr = nunjucks.render("src/resume.html.njk", {
 });
 fs.writeFileSync("src/phelipe-teles-resume-pt-br.html", renderedResumePtBr);
 
-const renderedResumeEnUs = nunjucks.render("src/resume.html.njk", {
+const renderedResumeEnUs = setupNunjucks("en-US").render("src/resume.html.njk", {
   ...jsonResumeEnUs,
   translations: {
     sections: {
@@ -34,36 +36,42 @@ const renderedResumeEnUs = nunjucks.render("src/resume.html.njk", {
 });
 fs.writeFileSync("src/phelipe-teles-resume-en-us.html", renderedResumeEnUs);
 
-function birthday(value) {
-  if (!value) {
-    throw new Error("Unexpected empty date");
-  }
+function createBirthdayFormatter(language) {
+  return (value) => {
+    if (!value) {
+      throw new Error("Unexpected empty date");
+    }
 
-  const [year, month, day] = value.split("-");
-  const date = new Date(year, month - 1, day);
-  return date.toLocaleDateString("pt-BR", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
+    const [year, month, day] = value.split("-");
+    const date = new Date(year, month - 1, day);
+    return date.toLocaleDateString(language, {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+  };
 }
 
-function formatPeriod(start, end) {
-  if (!start && !end) {
-    throw new Error("Unexpected missing start and end dates");
-  }
 
-  return `${formatDatePeriod(start)} -- ${end ? formatDatePeriod(end) : "Presente"}`;
+function createPeriodFormatter(language) {
+  return (start, end) => {
+    if (!start && !end) {
+      throw new Error("Unexpected missing start and end dates");
+    }
+
+    const present = language === "pt-BR" ? "Presente" : "Present";
+    return `${formatDatePeriod(start, language)} -- ${end ? formatDatePeriod(end, language) : present}`;
+  };
 }
 
-function formatDatePeriod(value) {
+function formatDatePeriod(value, language) {
   if (!value) {
     throw new Error("Unexpected missing date");
   }
 
   const [year, month, day] = value.split("-");
   const date = new Date(year, month - 1, day);
-  const s = date.toLocaleDateString("pt-BR", {
+  const s = date.toLocaleDateString(language, {
     month: "short",
     year: "numeric",
   });
