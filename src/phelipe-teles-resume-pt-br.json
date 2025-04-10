@@ -34,10 +34,11 @@
       "endDate": "2025-03-01",
       "location": "Remoto",
       "highlights": [
-        "Fui o principal desenvolvedor front-end do novo \"Business Center\" da empresa, utilizando TypeScript e React.",
-        "Ajudei a padronizar a interface de usuário da plataforma com o desenvolvimento da biblioteca interna de componentes reusáveis, documentada em Storybook.",
-        "Colaborei com o desenvolvimento de diversos aplicativos sob a arquitetura de micro-frontends, utilizando Single SPA e webpack.",
-        "Contribuí para a estabilidade da plataforma ao escrever testes de integração com Playwright e React Testing Library."
+        "Liderei o desenvolvimento front-end para o novo Business Center da empresa, construindo a interface do usuário e recursos principais utilizando React e TypeScript.",
+        "Contribuí significativamente para o desenvolvimento da biblioteca de componentes reutilizáveis, com foco em acessibilidade e design de API intuitivo, com documentação em Storybook.",
+        "Colaborei para implementar e manter a base da arquitetura de micro-frontends usando Single SPA e webpack, sustentando múltiplas equipes.",
+        "Melhorei a estabilidade da plataforma escrevendo testes de integração com Playwright e React Testing Library.",
+        "Colaborei estreitamente com a equipe de back-end para integrar APIs REST em aplicativos React utilizando bibliotecas modernas de data fetching (swr, react-query)."
       ]
     },
     {
@@ -48,10 +49,10 @@
       "endDate": "2022-08-01",
       "location": "Remoto",
       "highlights": [
-        "Desenvolvi aplicativos para web com Create React App e Next.js em TypeScript, utilizando Material UI.",
-        "Desenvolvi produtos mobile com React Native, utilizando react-native-cli e Expo.",
-        "Melhorei a monitoração de erros dos aplicativos web e mobile utilizando Sentry e GitLab CI/CD, facilitando a identificação e resolução de bugs em produção.",
-        "Escrevi testes de integração para aplicativos web e mobile utilizando Cypress e React Testing Library."
+        "Desenvolvi aplicativos web com Create React App e Next.js em TypeScript, utilizando Material UI.",
+        "Desenvolvi aplicativos mobile com React Native, utilizando react-native-cli e Expo.",
+        "Aprimorei o monitoramento de erros em produção para aplicativos web e mobile integrando Sentry nas pipelines de GitLab CI/CD, acelerando a identificação e resolução de bugs.",
+        "Melhorei a estabilidade nas plataformas web e mobile escrevendo testes de integração usando Cypress e React Testing Library."
       ]
     }
   ],

@@ -35,9 +35,10 @@
       "location": "Remote",
       "highlights": [
         "Led the front-end development for the company's new Business Center, building the user interface and core features using React and TypeScript.",
-        "Standardized the platform's UI by developing a reusable component library with comprehensive Storybook documentation.",
+        "Contributed significantly to the development of the reusable component library, focusing on accessibility and intuitive API design, with Storybook documentation.",
         "Collaborated to implement and maintain the micro-frontends architecture foundation using Single SPA and webpack, supporting multiple application teams.",
-        "Contributed to the platform's stability by writing integration tests with Playwright and React Testing Library."
+        "Contributed to the platform's stability by writing integration tests with Playwright and React Testing Library.",
+        "Collaborated closely with back-end team to integrate REST APIs into React applications using modern data fetching libraries (swr, react-query)."
       ]
     },
     {
@@ -50,8 +51,8 @@
       "highlights": [
         "Developed web applications with Create React App and Next.js in TypeScript, using Material UI.",
         "Developed mobile products with React Native, using react-native-cli and Expo.",
-        "Improved error monitoring for web and mobile applications using Sentry and GitLab CI/CD, facilitating the identification and resolution of bugs in production.",
-        "Wrote integration tests for web and mobile applications using Cypress and React Testing Library."
+        "Enhanced production error monitoring for web and mobile applications by integrating Sentry on GitLab CI/CD pipelines, accelerating bug identification and resolution.",
+        "Improve stability on web and mobile platform by writing integration tests using Cypress and React Testing Library."
       ]
     }
   ],
