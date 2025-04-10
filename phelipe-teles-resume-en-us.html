@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+
+  <style>
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0.5in;
+      font-family: "Palatino Linotype", Palatino, serif;
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 0.5rem 0;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-bottom: 1px solid #000;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.2rem;
+    }
+
+    .subheader {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .subheader li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .subheader li:not(:last-of-type):after {
+      content: "·"
+    }
+
+    .subheader a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .subheader a:hover {
+      text-decoration: underline;
+    }
+
+    .subsectionHeader {
+      width: 100%;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .subsectionHeader td {
+      padding: 0;
+      line-height: 1.2;
+    }
+
+    .subsectionHeader tr:first-child td:first-child {
+      font-weight: 700;
+    }
+
+    .subsectionHeader tr td:last-child {
+      text-align: right;
+    }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    i {
+      font-size: 0.9rem;
+    }
+
+    @media print {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+  <title>Resumé | Phelipe Teles</title>
+</head>
+<body>
+  <h1>PHELIPE TELES DA SILVA</h1>
+
+  <ul class="subheader">
+    <li>Jan 30, 1996</li>
+    <li>Rio de Janeiro, RJ</li>
+  </ul>
+
+  <ul class="subheader">
+    <li>
+      <i class="fa-solid fa-envelope"></i>
+      <a href="mailto:phelipe_teles@hotmail.com">phelipe_teles@hotmail.com</a>
+    </li>
+    <li>
+      <i class="fa-solid fa-globe"></i>
+      <a href="https://phelipetls.github.io">phelipetls.github.io</a>
+    </li>
+    
+    <li>
+      <i class="fa-brands fa-github"></i>
+      <a href="https://github.com/phelipetls">phelipetls</a>
+    </li>
+    
+    <li>
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/phelipeteles/">phelipeteles</a>
+    </li>
+    
+  </ul>
+
+  <h2>EXPERIENCE</h2>
+  
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td><a href="https://bornlogic.com">Bornlogic</a></td>
+          <td>Aug 2022 -- Feb 2025</td>
+        </tr>
+
+        <tr>
+          <td>Front-end Developer</td>
+          <td>Remote</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      
+      <li>Led the front-end development for the company&#39;s new Business Center, building the user interface and core features using React and TypeScript.</li>
+      
+      <li>Contributed significantly to the development of the reusable component library, focusing on accessibility and intuitive API design, with Storybook documentation.</li>
+      
+      <li>Collaborated to implement and maintain the micro-frontends architecture foundation using Single SPA and webpack, supporting multiple application teams.</li>
+      
+      <li>Contributed to the platform&#39;s stability by writing integration tests with Playwright and React Testing Library.</li>
+      
+      <li>Collaborated closely with back-end team to integrate REST APIs into React applications using modern data fetching libraries (swr, react-query).</li>
+      
+    </ul>
+  
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td><a href="https://mutual.club">Mutual</a></td>
+          <td>Dec 2020 -- Aug 2022</td>
+        </tr>
+
+        <tr>
+          <td>Front-end Developer</td>
+          <td>Remote</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      
+      <li>Developed web applications with Create React App and Next.js in TypeScript, using Material UI.</li>
+      
+      <li>Developed mobile products with React Native, using react-native-cli and Expo.</li>
+      
+      <li>Enhanced production error monitoring for web and mobile applications by integrating Sentry on GitLab CI/CD pipelines, accelerating bug identification and resolution.</li>
+      
+      <li>Improve stability on web and mobile platform by writing integration tests using Cypress and React Testing Library.</li>
+      
+    </ul>
+  
+
+  <h2>PROJECTS</h2>
+  
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td>Personal Blog and Website</td>
+          <td>Jan 2019 -- Present</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      
+        <li>Developed a static website using Astro and Tailwind CSS, hosted with GitHub Pages.</li>
+      
+        <li>Implemented integration tests with Playwright to validate the site&#39;s stability and usability.</li>
+      
+        <li>Wrote articles about web development, developer tools, mathematics, statistics, and data visualization.</li>
+      
+        <li>Added interactive code examples to articles using CodeSandbox and React, facilitating practical learning for readers.</li>
+      
+    </ul>
+  
+
+  <h2>EDUCATION</h2>
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://portal.ufrrj.br/">Universidade Federal Rural do Rio de Janeiro</a></td>
+        <td>Jan 2015 -- Jan 2020</td>
+      </tr>
+
+      <tr>
+        <td>Economics</td>
+        <td>Seropédica, RJ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>LANGUAGES</h2>
+  
+    <ul>
+      <li>English: Fluent</li>
+    </ul>
+  
+</body>
