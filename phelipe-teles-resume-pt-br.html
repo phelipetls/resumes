@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+
+  <style>
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0.5in;
+      font-family: "Palatino Linotype", Palatino, serif;
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 0.5rem 0;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-bottom: 1px solid #000;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.2rem;
+    }
+
+    .subheader {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .subheader li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .subheader li:not(:last-of-type):after {
+      content: "·"
+    }
+
+    .subheader a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .subheader a:hover {
+      text-decoration: underline;
+    }
+
+    .subsectionHeader {
+      width: 100%;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .subsectionHeader td {
+      padding: 0;
+      line-height: 1.2;
+    }
+
+    .subsectionHeader tr:first-child td:first-child {
+      font-weight: 700;
+    }
+
+    .subsectionHeader tr td:last-child {
+      text-align: right;
+    }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    i {
+      font-size: 0.9rem;
+    }
+
+    @media print {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+  <title>Resumé | Phelipe Teles</title>
+</head>
+<body>
+  <h1>PHELIPE TELES DA SILVA</h1>
+
+  <ul class="subheader">
+    <li>30 de jan. de 1996</li>
+    <li>Rio de Janeiro, RJ</li>
+  </ul>
+
+  <ul class="subheader">
+    <li>
+      <i class="fa-solid fa-envelope"></i>
+      <a href="mailto:phelipe_teles@hotmail.com">phelipe_teles@hotmail.com</a>
+    </li>
+    <li>
+      <i class="fa-solid fa-globe"></i>
+      <a href="https://phelipetls.github.io">phelipetls.github.io</a>
+    </li>
+    
+    <li>
+      <i class="fa-brands fa-github"></i>
+      <a href="https://github.com/phelipetls">phelipetls</a>
+    </li>
+    
+    <li>
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/phelipeteles/">phelipeteles</a>
+    </li>
+    
+  </ul>
+
+  <h2>EXPERIÊNCIA</h2>
+  
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td><a href="https://www.sqala.com.br/">SqalaPay Pagamentos</a></td>
+          <td>Fev. de 2025 -- Set. de 2025</td>
+        </tr>
+
+        <tr>
+          <td>Desenvolvedor Front-end</td>
+          <td>Remoto</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      
+      <li>Desenvolvi aplicações web com TypeScript, React, Next.js, Vite, Chakra UI e GraphQL (Apollo).</li>
+      
+      <li>Implementei a integração com 3D Secure (3DS) no fluxo de pagamento e de um checkout com suporte a múltiplos métodos de pagamento e pagadores.</li>
+      
+      <li>Desenvolvi uma vitrine de produtos personalizável, com funcionalidades de cadastro, edição e customização.</li>
+      
+      <li>Colaborei no back-end (TypeScript), conectando APIs REST a um BFF GraphQL e aplicando pequenas melhorias e correções de bugs.</li>
+      
+      <li>Assegurei a qualidade do sistema ao criar testes de integração com Playwright para fluxos críticos e ao utilizar Datadog para monitoramento, criação de alertas e depuração de problemas no back-end por meio de logs.</li>
+      
+    </ul>
+  
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td><a href="https://bornlogic.com">Bornlogic</a></td>
+          <td>Ago. de 2022 -- Fev. de 2025</td>
+        </tr>
+
+        <tr>
+          <td>Desenvolvedor Front-end</td>
+          <td>Remoto</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      
+      <li>Liderei o desenvolvimento front-end para o novo Business Center da empresa, construindo a interface do usuário e recursos principais utilizando React e TypeScript.</li>
+      
+      <li>Contribuí significativamente para o desenvolvimento da biblioteca de componentes reutilizáveis, com foco em acessibilidade e design de API intuitivo, com documentação em Storybook.</li>
+      
+      <li>Colaborei para implementar e manter a base da arquitetura de micro-frontends usando Single SPA e webpack, sustentando múltiplas equipes.</li>
+      
+      <li>Melhorei a estabilidade da plataforma escrevendo testes de integração com Playwright e React Testing Library.</li>
+      
+      <li>Colaborei estreitamente com a equipe de back-end para integrar APIs REST em aplicativos React utilizando bibliotecas modernas de data fetching (swr, react-query).</li>
+      
+    </ul>
+  
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td><a href="https://mutual.club">Mutual</a></td>
+          <td>Dez. de 2020 -- Ago. de 2022</td>
+        </tr>
+
+        <tr>
+          <td>Desenvolvedor Front-end</td>
+          <td>Remoto</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      
+      <li>Desenvolvi aplicativos web com Create React App e Next.js em TypeScript, utilizando Material UI.</li>
+      
+      <li>Desenvolvi aplicativos mobile com React Native, utilizando react-native-cli e Expo.</li>
+      
+      <li>Aprimorei o monitoramento de erros em produção para aplicativos web e mobile integrando Sentry nas pipelines de GitLab CI/CD, acelerando a identificação e resolução de bugs.</li>
+      
+      <li>Melhorei a estabilidade nas plataformas web e mobile escrevendo testes de integração usando Cypress e React Testing Library.</li>
+      
+    </ul>
+  
+
+  
+
+  <h2>FORMAÇÃO</h2>
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://portal.ufrrj.br/">Universidade Federal Rural do Rio de Janeiro</a></td>
+        <td>Jan. de 2015 -- Jan. de 2020</td>
+      </tr>
+
+      <tr>
+        <td>Ciências Econômicas</td>
+        <td>Seropédica, RJ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>IDIOMAS</h2>
+  
+    <ul>
+      <li>Inglês: Fluente</li>
+    </ul>
+  
+</body>
