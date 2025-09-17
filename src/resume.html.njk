@@ -158,6 +158,7 @@
     </ul>
   {% endfor %}
 
+  {% if projects and projects.length %}
   <h2>{{ translations.sections.projects }}</h2>
   {% for project in projects %}
     <table class="subsectionHeader">
@@ -175,6 +176,7 @@
       {% endfor %}
     </ul>
   {% endfor %}
+{% endif %}
 
   <h2>{{ translations.sections.education }}</h2>
   <table class="subsectionHeader">

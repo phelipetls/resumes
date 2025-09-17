@@ -85,6 +85,7 @@
 \medskip
 {<%- endfor %>}
 
+{<%- if projects and projects.length %>}
 \section*{<$ translations.sections.projects $>}
 
 {<%- for project in projects %>}
@@ -97,6 +98,7 @@
 \resumeListEnd
 \medskip
 {<%- endfor %>}
+{<%- endif %>}
 
 \section*{<$ translations.sections.education $>}
 

@@ -82,19 +82,7 @@
       "location": "Seropédica, RJ"
     }
   ],
-  "projects": [
-    {
-      "name": "Personal Blog and Website",
-      "startDate": "2019-01-01",
-      "description": "",
-      "highlights": [
-        "Developed a static website using Astro and Tailwind CSS, hosted with GitHub Pages.",
-        "Implemented integration tests with Playwright to validate the site's stability and usability.",
-        "Wrote articles about web development, developer tools, mathematics, statistics, and data visualization.",
-        "Added interactive code examples to articles using CodeSandbox and React, facilitating practical learning for readers."
-      ]
-    }
-  ],
+
   "languages": [
     {
       "language": "English",
