@@ -27,6 +27,21 @@
   },
   "work": [
     {
+      "name": "SqalaPay Pagamentos",
+      "position": "Front-end Developer",
+      "url": "https://www.sqala.com.br/",
+      "startDate": "2025-02-01",
+      "endDate": "2025-09-01",
+      "location": "Remote",
+      "highlights": [
+        "Developed web applications with TypeScript, React, Next.js, Vite, Chakra UI, and GraphQL (Apollo).",
+        "Implemented 3D Secure (3DS) integration in the payment flow and a checkout supporting multiple payment methods and payers.",
+        "Developed a customizable product showcase with features for creation, editing, and customization.",
+        "Collaborated on the back-end (TypeScript), connecting REST APIs to a GraphQL BFF and applying minor improvements and bug fixes.",
+        "Ensured system quality by creating integration tests with Playwright for critical flows and using Datadog for monitoring, alert creation, and back-end debugging through logs."
+      ]
+    },
+    {
       "name": "Bornlogic",
       "position": "Front-end Developer",
       "url": "https://bornlogic.com",
