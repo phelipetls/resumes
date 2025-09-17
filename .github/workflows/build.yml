@@ -18,30 +18,9 @@ jobs:
         run: npm ci
 
       - name: Install TeX dependencies
-        uses: teatimeguest/setup-texlive-action@v3
+        uses: paolobrasolin/setup-texlive-action@v1
         with:
-          packages: |
-            scheme-basic
-            geometry
-            inputenc
-            babel
-            hyperref
-            parskip
-            newpx
-            fontenc
-            titlesec
-            fontawesome5
-            tabularx
-            enumitem
-            csquotes
-            babel-portuges
-            xcolor
-            xpatch
-            xkeyval
-            xstring
-            fontaxes
-            newtx
-            textcomp
+          packages-path: ${{ github.workspace }}/.github/texlive.packages
 
       - name: Build
         run: npm run build
