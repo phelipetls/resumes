@@ -54,11 +54,11 @@ export const build = async (language) => {
   await new Promise((resolve, reject) => {
     const child = spawn('pdflatex', ["-output-directory", tempDir, texFilePath])
 
-    child.on('stdout', (data) => {
+    child.stdout.on('data', (data) => {
       console.log(`[pdflatex]: ${data}`)
     })
 
-    child.on('stderr', (data) => {
+    child.stderr.on('data', (data) => {
       console.error(`[pdflatex] [error]: ${data}`)
     })
 
