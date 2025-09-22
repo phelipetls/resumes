@@ -41,12 +41,10 @@ export const build = async (language) => {
     translations: translations[language]
   })
 
-   const tempDir = await mkdtemp(join(tmpdir(), 'latex-'))
-   const texFilePath = join(tempDir, "resume.tex")
-   await writeFile(texFilePath, texFile)
-   console.log(`Running pdflatex for ${language}`)
-   await exec(`pdflatex -output-directory="${tempDir}" "${texFilePath}"`)
-   console.log(`pdflatex completed for ${language}`)
+  const tempDir = await mkdtemp(join(tmpdir(), 'latex-'))
+  const texFilePath = join(tempDir, "resume.tex")
+  await writeFile(texFilePath, texFile)
+  await exec(`pdflatex -output-directory="${tempDir}" "${texFilePath}"`)
 
-   return readFile(join(tempDir, "resume.pdf"))
+  return readFile(join(tempDir, "resume.pdf"))
 }

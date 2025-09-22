@@ -9,21 +9,19 @@ jobs:
       - name: Checkout Git repository
         uses: actions/checkout@v4
 
-       - name: Build Resumés
-         uses: xu-cheng/texlive-action@v3
-         timeout-minutes: 3
-         with:
+      - name: Build Resumés
+        uses: xu-cheng/texlive-action@v3
+        with:
           texlive_version: latest
           os: alpine
           scheme: small
           run: |
             apk update
-            apk add nodejs-lts npm
-            tlmgr install newpx titlesec fontawesome5 enumitem csquotes xstring fontaxes newtx
-            npm ci
-            export OUT_DIR=dist
-            echo "Starting npm run build"
-            npm run build
+             apk add nodejs-lts npm
+             tlmgr install newpx titlesec fontawesome5 enumitem csquotes xstring fontaxes newtx
+             npm ci
+             export OUT_DIR=dist
+             npm run build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
