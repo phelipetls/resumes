@@ -10,15 +10,15 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 export const build = async (language) => {
   const jsonResume = language === "pt-BR" ? jsonResumePtBr : jsonResumeEnUs
 
-  const nunjucks = Nunjucks(language).render(join(__dirname, "templates", "resume.html.njk"), {
-    ...jsonResume,
-    translations: translations[language]
-  })
-
-  const result = nunjucks
+  const nunjucks = Nunjucks
     .configure({ autoescape: true })
     .addFilter("birthday", createBirthdayFormatter(language))
     .addFilter("formatPeriod", createPeriodFormatter(language));
+
+  const result = nunjucks.render(join(__dirname, "templates", "resume.html.njk"), {
+    ...jsonResume,
+    translations: translations[language]
+  })
 
   await readFile(result)
 }
