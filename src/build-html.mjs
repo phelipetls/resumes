@@ -5,6 +5,7 @@ import { translations } from './i18n/index.mjs'
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path'
 import { createBirthdayFormatter, createPeriodFormatter } from './utils/date.mjs'
+import { readFile } from 'node:fs/promises'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
