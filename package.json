@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "./scripts/build"
+    "build": "node ./src/main.mjs"
   },
   "dependencies": {
     "nunjucks": "^3.2.4"
