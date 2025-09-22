@@ -4,6 +4,7 @@ import jsonResumeEnUs from "./resumes/en-us.json" with { type: "json" };
 import { translations } from './i18n/index.mjs'
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path'
+import { createBirthdayFormatter, createPeriodFormatter } from './utils/date.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
