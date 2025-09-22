@@ -44,7 +44,7 @@ export const build = async (language) => {
   const tempDir = await mkdtemp(join(tmpdir(), 'latex-'))
   const texFilePath = join(tempDir, "resume.tex")
   await writeFile(texFilePath, texFile)
-  await exec(`pdflatex -output-directory=${tempDir} "${texFilePath}"`)
+  await exec(`pdflatex -output-directory="${tempDir}" "${texFilePath}"`)
 
   return readFile(join(tempDir, "resume.pdf"))
 }
