@@ -14,8 +14,8 @@ jobs:
         uses: xu-cheng/texlive-action@v3
         with:
           texlive_version: latest
-          os: debian
-          scheme: full
+          os: alpine
+          scheme: small
           run: |
             apk update
             apk add nodejs-lts npm
