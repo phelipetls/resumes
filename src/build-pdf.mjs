@@ -18,12 +18,12 @@ export const build = async (language) => {
     .configure({
       autoescape: false,
       tags: {
-        blockStart: "<%%",
-        blockEnd: "%%>",
-        variableStart: "<$%%",
-        variableEnd: "%%$>>",
-        commentStart: "<#%%",
-        commentEnd: "%%#>",
+        blockStart: "<%",
+        blockEnd: "%>",
+        variableStart: "<$",
+        variableEnd: "$>",
+        commentStart: "<#",
+        commentEnd: "#>",
       },
     })
     .addFilter("birthday", createBirthdayFormatter(language))
