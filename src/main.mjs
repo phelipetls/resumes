@@ -1,5 +1,5 @@
 import Nunjucks from "nunjucks";
-import { readdir, writeFile } from "fs/promises";
+import { readdir, writeFile, mkdir } from "fs/promises";
 import { build as buildPdf } from './build-pdf.mjs'
 import { build as buildHtml } from './build-html.mjs'
 import { join, dirname } from 'node:path'
@@ -12,6 +12,8 @@ const fileName_enUS = 'Phelipe_Teles_Frontend_Developer'
 const fileName_ptBR = 'Phelipe_Teles_Desenvolvedor_Frontend'
 
 const OUT_DIR = env.OUT_DIR
+
+await mkdir(OUT_DIR)
 
 await Promise.all([
   buildPdf("pt-BR").then(content => writeFile(join(OUT_DIR, fileName_ptBR + '.pdf'), content)),
