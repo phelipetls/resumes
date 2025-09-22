@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node ./src/main.mjs"
+    "build": "npm run build:css && node ./src/main.mjs",
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/styles.css"
   },
   "dependencies": {
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@tailwindcss/cli": "^4.1.13",
+    "daisyui": "^5.1.14",
     "eslint": "^9.36.0",
     "globals": "^16.4.0"
   }

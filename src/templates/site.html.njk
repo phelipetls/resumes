@@ -1,26 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ current_lang }}" data-theme="light">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resumés | Phelipe Teles</title>
+  <link href="./styles.css" rel="stylesheet" />
 </head>
 
-<body>
-  <h1>Resumés</h1>
+<body class="bg-base-200 min-h-screen p-4 sm:p-8">
+  <div class="max-w-5xl mx-auto">
+    <div class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4">
+          <h1 class="text-2xl font-bold">Phelipe Teles :: Resumé</h1>
+          <div class="flex items-center gap-2">
+            <select id="language-switcher" class="select select-bordered">
+              {% for lang in languages %}
+              <option value="{{ lang.code }}" {% if lang.code=""="current_lang" %}selected{% endif %}>
+                {{ lang.name }}
+              </option>
+              {% endfor %}
+            </select>
+            <a href="{{ pdf_path }}" download class="btn btn-primary">Download PDF</a>
+          </div>
+        </div>
 
-  {% if files.length > 0 %}
-  <ul>
-    {% for file in files %}
-    <li>
-      <a href="{{ file.href }}">{{ file.name }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p>No resumés</p>
-  {% endif %}
+        <!-- Tabs -->
+        <div role="tablist" class="tabs tabs-lifted" id="view-tabs">
+          <input type="radio" name="view_tabs" role="tab" class="tab" aria-label="HTML" data-content="html-view"
+            checked />
+          <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+            {{ resume_html | safe }}
+          </div>
+
+          <input type="radio" name="view_tabs" role="tab" class="tab" aria-label="PDF" data-content="pdf-view" />
+          <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+            <iframe class="w-full h-[80vh]" src="{{ pdf_path }}"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Language switcher logic
+    document
+      .getElementById("language-switcher")
+      .addEventListener("change", function () {
+        // Assumes language versions are in folders like /en-us/, /pt-br/
+        // And the root redirects to a default language.
+        const selectedLang = this.value;
+        // This logic might need adjustment based on final URL structure from the build script
+        const currentPath = window.location.pathname;
+        const langRoot = currentPath.split("/")[1];
+        if (langRoot !== selectedLang) {
+          window.location.href = `../${selectedLang}/`;
+        }
+      });
+  </script>
 </body>
 
 </html>
