@@ -3,14 +3,28 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node ./src/main.mjs"
+    "build": "cross-env OUT_DIR=dist npm run build:css && npm run build:site",
+    "build:site": "node ./src/main.mjs",
+    "build:css": "cross-env-shell npx @tailwindcss/cli -i ./src/app.css -o ./$OUT_DIR/styles.css",
+    "dev": "cross-env NODE_ENV=development OUT_DIR=dist concurrently --names=tailwind,site \"npm run dev:css\" \"npm run dev:site\"",
+    "dev:site": "nodemon ./src/main.mjs -e mjs,njk,json",
+    "dev:css": "cross-env-shell npx @tailwindcss/cli -i ./src/app.css -o ./$OUT_DIR/styles.css --watch"
   },
   "dependencies": {
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@tailwindcss/cli": "^4.1.13",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0",
+    "daisyui": "^5.1.14",
     "eslint": "^9.36.0",
-    "globals": "^16.4.0"
+    "globals": "^16.4.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "prettier-plugin-jinja-template": "^2.1.0",
+    "serve-handler": "^6.1.6"
   }
 }

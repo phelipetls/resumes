@@ -52,7 +52,7 @@ export const build = async (language) => {
   console.log(`Will build ${pdfPath} from .tex with pdflatex`)
 
   await new Promise((resolve, reject) => {
-    const child = spawn('pdflatex', ["-output-directory", tempDir, texFilePath])
+    const child = spawn('pdflatex', ["-output-directory", tempDir, "-interaction=nonstopmode", texFilePath])
 
     child.stdout.on('data', (data) => {
       console.log(`[pdflatex]: ${data}`)

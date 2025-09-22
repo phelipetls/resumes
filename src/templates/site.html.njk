@@ -1,26 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumés | Phelipe Teles</title>
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resumés | Phelipe Teles</title>
-</head>
+  <body class="bg-gradient-to-br from-base-200 to-base-300 p-4 sm:p-8">
+    {{ dimensions | dump }}
+    <div class="max-w-5xl mx-auto">
+      <div class="card bg-base-100 shadow-2xl">
+        <div class="card-body">
+          <div
+            class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4"
+          >
+            <h1 class="text-2xl font-bold">Phelipe Teles :: Resumés</h1>
+            <div class="flex items-center gap-2">
+              <select data-language-switcher class="select select-bordered">
+                {% for language in languages %}
+                  <option
+                    value="{{ language.code }}"
+                    {% if language.code === defaultLanguage %}selected{% endif %}
+                  >
+                    {{ language.name }}
+                  </option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
 
-<body>
-  <h1>Resumés</h1>
+          <div role="tablist" class="tabs tabs-border flex flex-row relative">
+            {% for format in ["html", "pdf"] %}
+              <input
+                type="radio"
+                role="tab"
+                class="tab"
+                name="format"
+                value="{{ format }}"
+                aria-label="{{ format | upper }}"
+                {% if format === defaultFormat %}checked{% endif %}
+              />
 
-  {% if files.length > 0 %}
-  <ul>
-    {% for file in files %}
-    <li>
-      <a href="{{ file.href }}">{{ file.name }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p>No resumés</p>
-  {% endif %}
-</body>
+              <div role="tabpanel" class="tab-content">
+                <iframe
+                  data-resume-iframe="{{ format }}"
+                  src="{{ urls[format][defaultLanguage] }}"
+                  class="w-full border-0"
+                  {% if format == 'pdf' %}style="min-height: 11in;"{% endif %}
+                >
+                </iframe>
 
+                {% if format === "pdf" %}
+                  <div class="mt-2 flex justify-center">
+                    <a
+                      data-download-pdf-button
+                      class="btn btn-neutral btn-wide"
+                      download
+                      href="{{ urls['pdf'][defaultLanguage] }}"
+                    >
+                      Download
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      data-resume-html-pt-br="{{ urls['html']['pt-BR'] }}"
+      data-resume-html-en-us="{{ urls['html']['en-US'] }}"
+      data-resume-pdf-pt-br="{{ urls['pdf']['pt-BR'] }}"
+      data-resume-pdf-en-us="{{ urls['pdf']['en-US'] }}"
+    >
+      const currentScript = document.currentScript;
+
+      const resumesUrls = {
+        html: {
+          "pt-BR": currentScript.dataset.resumeHtmlPtBr,
+          "en-US": currentScript.dataset.resumeHtmlEnUs,
+        },
+        pdf: {
+          "pt-BR": currentScript.dataset.resumePdfPtBr,
+          "en-US": currentScript.dataset.resumePdfEnUs,
+        },
+      };
+
+      const getResumeUrl = (format, language) => {
+        return resumesUrls[format][language];
+      };
+
+      const languageSwitcher = document.querySelector(
+        "[data-language-switcher]",
+      );
+
+      const getSelectedFormat = () => {
+        return document.querySelector("[role=tab][name=format]:checked").value;
+      };
+
+      const getSelectedLanguage = () => {
+        return languageSwitcher.value;
+      };
+
+      const getCurrentIframe = () => {
+        return document.querySelector(
+          `[data-resume-iframe=${getSelectedFormat()}]`,
+        );
+      };
+
+      const updateIframeUrl = () => {
+        const selectedLanguage = getSelectedLanguage();
+        const selectedFormat = getSelectedFormat();
+        const newUrl = getResumeUrl(selectedFormat, selectedLanguage);
+        const iframe = getCurrentIframe();
+        iframe.src = newUrl;
+      };
+
+      const tabs = document.querySelectorAll("[role=tab]");
+      for (const tab of tabs) {
+        tab.addEventListener("change", updateIframeUrl);
+      }
+
+      const downloadBtn = document.querySelector("[data-download-pdf-button]");
+
+      const updateDownloadPdfButton = () => {
+        const selectedFormat = getSelectedFormat();
+        const selectedLanguage = getSelectedLanguage();
+        const url = getResumeUrl("pdf", selectedLanguage);
+        downloadBtn.href = url;
+      };
+
+      const handleResumeChange = () => {
+        updateIframeUrl();
+        updateDownloadPdfButton();
+      };
+
+      languageSwitcher.addEventListener("change", (e) => {
+        handleResumeChange();
+        document.documentElement.setAttribute("lang", e.target.value);
+      });
+
+      for (const tab of tabs) {
+        tab.addEventListener("change", () => {
+          handleResumeChange();
+        });
+      }
+
+      document.querySelector('[data-resume-iframe=html]').addEventListener('load', (e) => {
+        const iframe = e.target;
+        iframe.style.height = iframe.contentDocument.documentElement.scrollHeight + 'px';
+      })
+    </script>
+  </body>
 </html>
