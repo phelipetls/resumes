@@ -15,8 +15,8 @@ jobs:
           texlive_version: latest
           os: alpine
           scheme: small
-           run: |
-             apk update
+          run: |
+            apk update
              apk add nodejs-lts npm
              tlmgr install newpx titlesec fontawesome5 enumitem csquotes xstring fontaxes newtx
              npm ci
