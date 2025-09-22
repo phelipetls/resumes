@@ -1,4 +1,4 @@
-import nunjucks from "nunjucks";
+import Nunjucks from "nunjucks";
 import { readdir, writeFile } from "fs/promises";
 import { build as buildPdf } from './build-pdf.mjs'
 import { build as buildHtml } from './build-html.mjs'
@@ -17,7 +17,7 @@ await Promise.all([
   buildHtml("en-US").then(content => writeFile(join(OUT_DIR, fileName_enUS + '.html'), content))
 ])
 
-nunjucks.configure({ autoescape: true });
+const nunjucks = Nunjucks.configure({ autoescape: true });
 
 const files = await readdir(OUT_DIR);
 
