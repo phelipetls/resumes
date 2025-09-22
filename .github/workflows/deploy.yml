@@ -26,8 +26,8 @@ jobs:
           run: |
             apk update
             apk add nodejs-lts npm
-            npm run build
             tlmgr install scheme-basic geometry inputenc babel hyperref parskip newpx fontenc titlesec fontawesome5 tabularx enumitem csquotes babel-portuges xcolor xpatch xkeyval xstring fontaxes newtx textcomp
+            npm run build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
