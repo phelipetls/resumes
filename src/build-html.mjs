@@ -22,5 +22,5 @@ export const build = async (language) => {
     translations: translations[language]
   })
 
-  return readFile(result)
+  return result
 }
