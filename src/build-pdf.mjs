@@ -59,7 +59,7 @@ export const build = async (language) => {
     })
 
     child.on('stderr', (data) => {
-      console.log(`[pdflatex] [error]: ${data}`)
+      console.error(`[pdflatex] [error]: ${data}`)
     })
 
     child.on('close', (code) => {
