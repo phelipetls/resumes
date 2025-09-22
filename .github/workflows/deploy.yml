@@ -13,7 +13,7 @@ jobs:
       - name: Build Resumés
         uses: xu-cheng/texlive-action@v3
         with:
-          texlive_version: 2024
+          texlive_version: latest
           os: alpine
           scheme: small
           run: |
