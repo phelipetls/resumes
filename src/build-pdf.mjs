@@ -50,9 +50,9 @@ export const build = async (language) => {
   await writeFile(texFilePath, texFile)
   console.log(`Saved ${texFilePath} template into disk`)
 
+  const pdfPath = join(tempDir, "resume.pdf")
   console.log(`Will build ${pdfPath} from .tex with pdflatex`)
   await exec(`pdflatex -output-directory=${tempDir} ${texFilePath}`)
-  const pdfPath = join(tempDir, "resume.pdf")
   console.log(`Built ${pdfPath} from .tex with pdflatex`)
 
   return readFile(pdfPath)
