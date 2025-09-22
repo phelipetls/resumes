@@ -1,9 +1,9 @@
-const nunjucks = require("nunjucks");
-const fs = require("fs");
+import nunjucks from "nunjucks";
+import { readdir, writeFile } from "fs/promises";
 
 nunjucks.configure({ autoescape: true });
 
-const files = fs.readdirSync("dist");
+const files = await readdir("dist");
 
 const renderedIndexPage = nunjucks.render("src/index.njk", {
   files: files.map((file) => {
@@ -16,4 +16,4 @@ const renderedIndexPage = nunjucks.render("src/index.njk", {
   }),
 });
 
-fs.writeFileSync("dist/index.html", renderedIndexPage);
+await writeFile("dist/index.html", renderedIndexPage);

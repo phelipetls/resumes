@@ -1,14 +1,13 @@
-const nunjucks = require("nunjucks");
-const jsonResumePtBr = require("../src/phelipe-teles-resume-pt-br.json");
-const jsonResumeEnUs = require("../src/phelipe-teles-resume-en-us.json");
-const fs = require("fs");
+import nunjucks from "nunjucks";
+import jsonResumePtBr from "../src/phelipe-teles-resume-pt-br.json" assert { type: "json" };
+import jsonResumeEnUs from "../src/phelipe-teles-resume-en-us.json" assert { type: "json" };
+import { writeFile } from "fs/promises";
 
-function setupNunjucks(language) {
-  return nunjucks
+const setupNunjucks = (language) =>
+  nunjucks
     .configure({ autoescape: true })
     .addFilter("birthday", createBirthdayFormatter(language))
     .addFilter("formatPeriod", createPeriodFormatter(language));
-}
 
 const renderedResumePtBr = setupNunjucks("pt-BR").render("src/resume.html.njk", {
   ...jsonResumePtBr,
@@ -21,7 +20,7 @@ const renderedResumePtBr = setupNunjucks("pt-BR").render("src/resume.html.njk", 
     },
   },
 });
-fs.writeFileSync("src/phelipe-teles-resume-pt-br.html", renderedResumePtBr);
+await writeFile("src/phelipe-teles-resume-pt-br.html", renderedResumePtBr);
 
 const renderedResumeEnUs = setupNunjucks("en-US").render("src/resume.html.njk", {
   ...jsonResumeEnUs,
@@ -34,7 +33,7 @@ const renderedResumeEnUs = setupNunjucks("en-US").render("src/resume.html.njk", 
     },
   },
 });
-fs.writeFileSync("src/phelipe-teles-resume-en-us.html", renderedResumeEnUs);
+await writeFile("src/phelipe-teles-resume-en-us.html", renderedResumeEnUs);
 
 function createBirthdayFormatter(language) {
   return (value) => {
@@ -52,7 +51,6 @@ function createBirthdayFormatter(language) {
   };
 }
 
-
 function createPeriodFormatter(language) {
   return (start, end) => {
     if (!start && !end) {
@@ -60,7 +58,9 @@ function createPeriodFormatter(language) {
     }
 
     const present = language === "pt-BR" ? "Presente" : "Present";
-    return `${formatDatePeriod(start, language)} -- ${end ? formatDatePeriod(end, language) : present}`;
+    return `${formatDatePeriod(start, language)} -- ${
+      end ? formatDatePeriod(end, language) : present
+    }`;
   };
 }
 

@@ -2,6 +2,6 @@
 
 set -euo
 
-node scripts/build-resume-html.js
+node scripts/build-resume-html.mjs
 cp src/phelipe-teles-resume-pt-br.html dist
 cp src/phelipe-teles-resume-en-us.html dist

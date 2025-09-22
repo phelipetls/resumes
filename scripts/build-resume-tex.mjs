@@ -1,19 +1,19 @@
-const nunjucks = require("nunjucks");
-const jsonResumePtBr = require("../src/phelipe-teles-resume-pt-br.json");
-const jsonResumeEnUs = require("../src/phelipe-teles-resume-en-us.json");
-const fs = require("fs");
+import nunjucks from "nunjucks";
+import jsonResumePtBr from "../src/phelipe-teles-resume-pt-br.json" assert { type: "json" };
+import jsonResumeEnUs from "../src/phelipe-teles-resume-en-us.json" assert { type: "json" };
+import { writeFile } from "fs/promises";
 
-function setupNunjucks(language) {
-  return nunjucks
+const setupNunjucks = (language) =>
+  nunjucks
     .configure({
       autoescape: false,
       tags: {
-        blockStart: "<%",
-        blockEnd: "%>",
-        variableStart: "<$",
-        variableEnd: "$>",
-        commentStart: "<#",
-        commentEnd: "#>",
+        blockStart: "<%%",
+        blockEnd: "%%>",
+        variableStart: "<$%%",
+        variableEnd: "%%$>>",
+        commentStart: "<#%%",
+        commentEnd: "%%#>",
       },
     })
     .addFilter("birthday", createBirthdayFormatter(language))
@@ -21,7 +21,6 @@ function setupNunjucks(language) {
     .addFilter("escapeQuotes", escapeQuotes)
     .addFilter("escapeUnderline", escapeUnderline)
     .addFilter("escapeApostrophe", escapeApostrophe);
-}
 
 const renderedResumePtBr = setupNunjucks("pt-BR").render("src/resume.tex.njk", {
   ...jsonResumePtBr,
@@ -34,7 +33,7 @@ const renderedResumePtBr = setupNunjucks("pt-BR").render("src/resume.tex.njk", {
     },
   },
 });
-fs.writeFileSync("src/phelipe-teles-resume-pt-br.tex", renderedResumePtBr);
+await writeFile("src/phelipe-teles-resume-pt-br.tex", renderedResumePtBr);
 
 const renderedResumeEnUs = setupNunjucks("en-US").render("src/resume.tex.njk", {
   ...jsonResumeEnUs,
@@ -47,7 +46,7 @@ const renderedResumeEnUs = setupNunjucks("en-US").render("src/resume.tex.njk", {
     },
   },
 });
-fs.writeFileSync("src/phelipe-teles-resume-en-us.tex", renderedResumeEnUs);
+await writeFile("src/phelipe-teles-resume-en-us.tex", renderedResumeEnUs);
 
 function createBirthdayFormatter(language) {
   return (value) => {
