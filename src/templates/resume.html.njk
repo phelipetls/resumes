@@ -1,11 +1,9 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
   <style>
     body {
@@ -110,6 +108,7 @@
   </style>
   <title>Resumé | Phelipe Teles</title>
 </head>
+
 <body>
   <h1>{{ basics.name | upper }}</h1>
 
@@ -137,46 +136,46 @@
 
   <h2>{{ translations.sections.work }}</h2>
   {% for job in work %}
-    <table class="subsectionHeader">
-      <tbody>
-        <tr>
-          <td><a href="{{ job.url }}">{{ job.name }}</a></td>
-          <td>{{ job.startDate | formatPeriod(job.endDate) }}</td>
-        </tr>
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="{{ job.url }}">{{ job.name }}</a></td>
+        <td>{{ job.startDate | formatPeriod(job.endDate) }}</td>
+      </tr>
 
-        <tr>
-          <td>{{ job.position }}</td>
-          <td>{{ job.location }}</td>
-        </tr>
-      </tbody>
-    </table>
+      <tr>
+        <td>{{ job.position }}</td>
+        <td>{{ job.location }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <ul>
-      {% for highlight in job.highlights %}
-      <li>{{ highlight }}</li>
-      {% endfor %}
-    </ul>
+  <ul>
+    {% for highlight in job.highlights %}
+    <li>{{ highlight }}</li>
+    {% endfor %}
+  </ul>
   {% endfor %}
 
   {% if projects and projects.length %}
   <h2>{{ translations.sections.projects }}</h2>
   {% for project in projects %}
-    <table class="subsectionHeader">
-      <tbody>
-        <tr>
-          <td>{{ project.name }}</td>
-          <td>{{ project.startDate | formatPeriod(project.endDate) }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td>{{ project.name }}</td>
+        <td>{{ project.startDate | formatPeriod(project.endDate) }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <ul>
-      {% for highlight in project.highlights %}
-        <li>{{ highlight }}</li>
-      {% endfor %}
-    </ul>
+  <ul>
+    {% for highlight in project.highlights %}
+    <li>{{ highlight }}</li>
+    {% endfor %}
+  </ul>
   {% endfor %}
-{% endif %}
+  {% endif %}
 
   <h2>{{ translations.sections.education }}</h2>
   <table class="subsectionHeader">
@@ -195,8 +194,8 @@
 
   <h2>{{ translations.sections.languages }}</h2>
   {% for language in languages %}
-    <ul>
-      <li>{{ language.language }}: {{ language.fluency }}</li>
-    </ul>
+  <ul>
+    <li>{{ language.language }}: {{ language.fluency }}</li>
+  </ul>
   {% endfor %}
 </body>

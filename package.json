@@ -3,15 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build:tex": "node scripts/build-resume-tex.mjs",
-    "build:index": "node scripts/build-index-html.mjs",
-    "build:pdf": "./scripts/build-pdf",
-    "build:html": "./scripts/build-html",
-    "build": "./scripts/build",
-    "preview": "serve -l 3000 dist"
+    "build": "./scripts/build"
   },
   "dependencies": {
-    "nunjucks": "^3.2.4",
-    "serve": "^14.2.4"
+    "nunjucks": "^3.2.4"
   }
 }
