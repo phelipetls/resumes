@@ -3,7 +3,7 @@ name: Build Resumé and release
 on: [push]
 
 jobs:
-  build_and_release_resume:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Git repository
