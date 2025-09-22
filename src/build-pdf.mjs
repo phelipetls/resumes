@@ -3,8 +3,7 @@ import jsonResumePtBr from "./resumes/pt-br.json" with { type: "json" };
 import jsonResumeEnUs from "./resumes/en-us.json" with { type: "json" };
 import { writeFile } from "fs/promises";
 import { translations } from './i18n/index.mjs'
-import child_process from 'node:child_process'
-import { promisify } from "node:util";
+import { spawn } from 'node:child_process'
 import { mkdtemp, readFile } from "node:fs/promises";
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path'
@@ -13,7 +12,6 @@ import { escapeQuotes, escapeUnderline, escapeApostrophe } from './utils/latex.m
 import { tmpdir } from 'os'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const exec = promisify(child_process.exec)
 
 export const build = async (language) => {
   const nunjucks = Nunjucks
@@ -52,8 +50,28 @@ export const build = async (language) => {
 
   const pdfPath = join(tempDir, "resume.pdf")
   console.log(`Will build ${pdfPath} from .tex with pdflatex`)
-  await exec(`pdflatex -output-directory=${tempDir} ${texFilePath}`)
-  console.log(`Built ${pdfPath} from .tex with pdflatex`)
+
+  await new Promise((resolve, reject) => {
+    const child = spawn('pdflatex', ["-output-directory", tempDir, texFilePath])
+
+    child.on('stdout', (data) => {
+      console.log(`[pdflatex]: ${data}`)
+    })
+
+    child.on('stderr', (data) => {
+      console.log(`[pdflatex] [error]: ${data}`)
+    })
+
+    child.on('close', (code) => {
+      if (code === 0) {
+        console.log(`Built ${pdfPath} from .tex with pdflatex`)
+        resolve()
+      } else {
+        console.log(`pdflatex exited with code ${code}`)
+        reject()
+      }
+    })
+  })
 
   return readFile(pdfPath)
 }
