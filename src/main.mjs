@@ -13,14 +13,19 @@ const fileName_ptBR = 'Phelipe_Teles_Desenvolvedor_Frontend'
 
 const OUT_DIR = env.OUT_DIR
 
+console.log('Creating output directory:', OUT_DIR)
 await mkdir(OUT_DIR)
+console.log('Output directory created')
 
+console.log('Starting builds...')
 await Promise.all([
   buildPdf("pt-BR").then(content => writeFile(join(OUT_DIR, fileName_ptBR + '.pdf'), content)),
   buildPdf("en-US").then(content => writeFile(join(OUT_DIR, fileName_enUS + '.pdf'), content)),
   buildHtml("pt-BR").then(content => writeFile(join(OUT_DIR, fileName_ptBR + '.html'), content)),
   buildHtml("en-US").then(content => writeFile(join(OUT_DIR, fileName_enUS + '.html'), content)),
 ])
+
+console.log('Builds completed, generating index.html')
 
 const nunjucks = Nunjucks.configure({ autoescape: true });
 
@@ -38,3 +43,5 @@ const renderedSite = nunjucks.render(join(__dirname, "templates", "site.njk"), {
 });
 
 await writeFile(join(OUT_DIR, "index.html"), renderedSite);
+
+console.log('All done')
