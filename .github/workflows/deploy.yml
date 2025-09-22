@@ -21,8 +21,7 @@ jobs:
             apk add nodejs-lts npm
             tlmgr install newpx titlesec fontawesome5 enumitem csquotes xstring fontaxes newtx
             npm ci
-            export OUT_DIR=dist
-            npm run build
+            OUT_DIR=dist npm run build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
