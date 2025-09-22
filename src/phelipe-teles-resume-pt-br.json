@@ -35,10 +35,10 @@
       "location": "Remoto",
       "highlights": [
         "Desenvolvi aplicações web com TypeScript, React, Next.js, Vite, Chakra UI e GraphQL (Apollo).",
-        "Implementei a integração com 3D Secure (3DS) no fluxo de pagamento e de um checkout com suporte a múltiplos métodos de pagamento e pagadores.",
+        "Implementei autenticação segura no fluxo de pagamento e checkout multi-pagador permitindo divisão de valores entre diferentes pessoas e métodos de pagamento.",
         "Desenvolvi uma vitrine de produtos personalizável, com funcionalidades de cadastro, edição e customização.",
         "Colaborei no back-end (TypeScript), conectando APIs REST a um BFF GraphQL e aplicando pequenas melhorias e correções de bugs.",
-        "Assegurei a qualidade do sistema ao criar testes de integração com Playwright para fluxos críticos e ao utilizar Datadog para monitoramento, criação de alertas e depuração de problemas no back-end por meio de logs."
+        "Criei cobertura extensiva de testes com Playwright para fluxos críticos de checkout, prevenindo regressões em funcionalidades essenciais, e utilizei Datadog para monitoramento, criação de alertas e depuração de problemas no back-end por meio de logs."
       ]
     },
     {
@@ -49,8 +49,8 @@
       "endDate": "2025-02-01",
       "location": "Remoto",
       "highlights": [
-        "Liderei o desenvolvimento front-end para o novo Business Center da empresa, construindo a interface do usuário e recursos principais utilizando React e TypeScript.",
-        "Contribuí significativamente para o desenvolvimento da biblioteca de componentes reutilizáveis, com foco em acessibilidade e design de API intuitivo, com documentação em Storybook.",
+        "Liderei o desenvolvimento front-end do Business Center, aplicação central de gerenciamento que contribuiu para retenção de clientes, utilizando React e TypeScript.",
+        "Me tornei referência técnica da biblioteca de componentes reutilizáveis, responsável por code reviews e desenvolvimento de APIs intuitivas, com documentação em Storybook e foco em acessibilidade.",
         "Colaborei para implementar e manter a base da arquitetura de micro-frontends usando Single SPA e webpack, sustentando múltiplas equipes.",
         "Melhorei a estabilidade da plataforma escrevendo testes de integração com Playwright e React Testing Library.",
         "Colaborei estreitamente com a equipe de back-end para integrar APIs REST em aplicativos React utilizando bibliotecas modernas de data fetching (swr, react-query)."
