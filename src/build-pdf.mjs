@@ -36,15 +36,23 @@ export const build = async (language) => {
 
   const jsonResume = language === "pt-BR" ? jsonResumePtBr : jsonResumeEnUs
 
-  const texFile = nunjucks.render(join(__dirname, "templates", "resume.tex.njk"), {
+  const templatePath = join(__dirname, "templates", "resume.tex.njk")
+
+  console.log(`Will render ${templatePath} template into .tex file`)
+  const texFile = nunjucks.render(templatePath, {
     ...jsonResume,
     translations: translations[language]
   })
+  console.log('Rendered .tex template')
 
   const tempDir = await mkdtemp(join(tmpdir(), 'latex-'))
   const texFilePath = join(tempDir, "resume.tex")
   await writeFile(texFilePath, texFile)
-  await exec(`pdflatex -output-directory="${tempDir}" "${texFilePath}"`)
+  console.log(`Saved ${texFilePath} template into disk`)
 
-  return readFile(join(tempDir, "resume.pdf"))
+  await exec(`pdflatex -output-directory="${tempDir}" "${texFilePath}"`)
+  const pdfPath = join(tempDir, "resume.pdf")
+  console.log(`Built ${pdfPath} from .tex with pdflatex`)
+
+  return readFile(pdfPath)
 }

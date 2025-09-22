@@ -26,7 +26,10 @@ const nunjucks = Nunjucks.configure({ autoescape: true });
 
 const files = await readdir(OUT_DIR);
 
-const renderedSite = nunjucks.render(join(__dirname, "templates", "site.njk"), {
+const templatePath = join(__dirname, "templates", "site.html.njk")
+
+console.log(`Will render ${templatePath} into HTML`)
+const renderedSite = nunjucks.render(templatePath , {
   files: files.map((file) => {
     return {
       name: file,
@@ -36,5 +39,6 @@ const renderedSite = nunjucks.render(join(__dirname, "templates", "site.njk"), {
     };
   }),
 });
+console.log(`Rendered ${templatePath} into HTML`)
 
 await writeFile(join(OUT_DIR, "index.html"), renderedSite);

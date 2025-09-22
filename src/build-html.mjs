@@ -5,7 +5,6 @@ import { translations } from './i18n/index.mjs'
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path'
 import { createBirthdayFormatter, createPeriodFormatter } from './utils/date.mjs'
-import { readFile } from 'node:fs/promises'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -17,10 +16,14 @@ export const build = async (language) => {
     .addFilter("birthday", createBirthdayFormatter(language))
     .addFilter("formatPeriod", createPeriodFormatter(language));
 
-  const result = nunjucks.render(join(__dirname, "templates", "resume.html.njk"), {
+  const templatePath = join(__dirname, "templates", "resume.html.njk")
+
+  console.log(`Will render ${templatePath} template into HTML`)
+  const result = nunjucks.render(templatePath, {
     ...jsonResume,
     translations: translations[language]
   })
+  console.log('Rendered HTML successfully')
 
   return result
 }
