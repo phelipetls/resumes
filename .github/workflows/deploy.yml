@@ -22,8 +22,6 @@ jobs:
              npm ci
              export OUT_DIR=dist
              npm run build
-        env:
-          OUT_DIR: dist
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
