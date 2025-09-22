@@ -2,7 +2,10 @@ import Nunjucks from "nunjucks";
 import { readdir, writeFile } from "fs/promises";
 import { build as buildPdf } from './build-pdf.mjs'
 import { build as buildHtml } from './build-html.mjs'
-import { join } from 'node:path'
+import { join, dirname } from 'node:path'
+import { fileURLToPath } from "node:url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const fileName_enUS = 'Phelipe_Teles_Frontend_Developer'
 const fileName_ptBR = 'Phelipe_Teles_Desenvolvedor_Frontend'
