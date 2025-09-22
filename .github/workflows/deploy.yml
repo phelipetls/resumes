@@ -24,6 +24,8 @@ jobs:
           os: alpine
           scheme: small
           run: |
+            apk update
+            apk add nodejs-lts
             npm run build
 
       - name: Deploy to GitHub Pages
