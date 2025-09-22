@@ -10,7 +10,7 @@ const __dirname = fileURLToPath(import.meta.url)
 export const build = async (language) => {
   const jsonResume = language === "pt-BR" ? jsonResumePtBr : jsonResumeEnUs
 
-  const nunjucks = Nunjucks(language).render(join(__dirname, "templates", "html.njk"), {
+  const nunjucks = Nunjucks(language).render(join(__dirname, "templates", "resume.html.njk"), {
     ...jsonResume,
     translations: translations[language]
   })
