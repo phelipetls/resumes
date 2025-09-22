@@ -5,6 +5,7 @@ on: [push]
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v4
