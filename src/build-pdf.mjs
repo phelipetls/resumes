@@ -2,7 +2,7 @@ import Nunjucks from "nunjucks";
 import jsonResumePtBr from "./resumes/pt-br.json" with { type: "json" };
 import jsonResumeEnUs from "./resumes/en-us.json" with { type: "json" };
 import { writeFile } from "fs/promises";
-import { translations } from './builders/i18n/index.jss'
+import { translations } from './i18n/index.mjs'
 import child_process from 'node:child_process'
 import { promisify } from "node:util";
 import { mkdtemp, readFile } from "node:fs/promises";

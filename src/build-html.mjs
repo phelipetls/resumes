@@ -1,7 +1,7 @@
 import Nunjucks from "nunjucks";
 import jsonResumePtBr from "./resumes/pt-br.json" with { type: "json" };
 import jsonResumeEnUs from "./resumes/en-us.json" with { type: "json" };
-import { translations } from '../i18n/index.js/index.js'
+import { translations } from './i18n/index.mjs'
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path'
 
