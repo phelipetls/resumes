@@ -21,8 +21,8 @@ jobs:
             tlmgr install newpx titlesec fontawesome5 enumitem csquotes xstring fontaxes newtx
             npm ci
             npm run build
-          env:
-            OUT_DIR: dist
+        env:
+          OUT_DIR: dist
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
