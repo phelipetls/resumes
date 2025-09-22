@@ -5,10 +5,17 @@ on: [push]
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build Resumés
         uses: xu-cheng/texlive-action@v3
@@ -20,8 +27,7 @@ jobs:
             apk update
             apk add nodejs-lts npm
             tlmgr install newpx titlesec fontawesome5 enumitem csquotes xstring fontaxes newtx
-            npm ci
-            OUT_DIR=dist npm run build
+            npm run build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2

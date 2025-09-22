@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node ./src/main.mjs"
+    "build:tex": "node scripts/build-resume-tex.js",
+    "build:index": "node scripts/build-index-html.js",
+    "build:pdf": "./scripts/build-pdf",
+    "build:html": "./scripts/build-html",
+    "build": "./scripts/build",
+    "preview": "serve -l 3000 dist"
   },
   "dependencies": {
-    "nunjucks": "^3.2.4"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.36.0",
-    "eslint": "^9.36.0",
-    "globals": "^16.4.0"
+    "nunjucks": "^3.2.4",
+    "serve": "^14.2.4"
   }
 }
