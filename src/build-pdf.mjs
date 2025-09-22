@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path'
 import { createBirthdayFormatter, createPeriodFormatter } from './utils/date.mjs'
 import { escapeQuotes, escapeUnderline, escapeApostrophe } from './utils/latex.mjs'
+import { tmpdir } from 'os'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const exec = promisify(child_process.exec)
@@ -40,7 +41,7 @@ export const build = async (language) => {
     translations: translations[language]
   })
 
-  const tempDir = await mkdtemp()
+  const tempDir = await mkdtemp(join(tmpdir(), 'latex-'))
   const texFilePath = join(tempDir, "resume.tex")
   await writeFile(texFilePath, texFile)
   await exec(`pdflatex -output-directory=${tempDir} "${texFilePath}"`)
