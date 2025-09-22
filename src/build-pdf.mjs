@@ -8,6 +8,8 @@ import { promisify } from "node:util";
 import { mkdtemp, readFile } from "node:fs/promises";
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path'
+import { createBirthdayFormatter, createPeriodFormatter } from './utils/date.mjs'
+import { escapeQuotes, escapeUnderline, escapeApostrophe } from './utils/latex.mjs'
 
 const __dirname = fileURLToPath(import.meta.url)
 const exec = promisify(child_process.exec)
