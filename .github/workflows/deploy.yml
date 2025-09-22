@@ -25,7 +25,7 @@ jobs:
           scheme: small
           run: |
             apk update
-            apk add nodejs-lts
+            apk add nodejs-lts npm
             npm run build
 
       - name: Deploy to GitHub Pages
