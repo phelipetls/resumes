@@ -21,7 +21,7 @@ export function createPeriodFormatter(language) {
     }
 
     const present = language === "pt-BR" ? "Presente" : "Present";
-    return `${formatDatePeriod(start, language)} -- ${end ? formatDatePeriod(end, language) : present}`;
+    return `${formatDatePeriod(start, language)} — ${end ? formatDatePeriod(end, language) : present}`;
   };
 }
 
