@@ -34,11 +34,11 @@
       "endDate": "2025-09-01",
       "location": "Remoto",
       "highlights": [
-        "Desenvolvi aplicações web com TypeScript, React, Next.js, Vite, Chakra UI e GraphQL (Apollo).",
-        "Implementei autenticação segura no fluxo de pagamento e checkout multi-pagador permitindo divisão de valores entre diferentes pessoas e métodos de pagamento.",
-        "Desenvolvi uma vitrine de produtos personalizável, com funcionalidades de cadastro, edição e customização.",
-        "Colaborei no back-end (TypeScript), conectando APIs REST a um BFF GraphQL e aplicando pequenas melhorias e correções de bugs.",
-        "Assegurei qualidade do sistema criando testes extensivos com Playwright e utilizando Datadog para monitoramento e depuração de problemas."
+        "Desenvolvi aplicações web internacionalizadas com TypeScript, React, Next.js (next-i18next), Vite, Chakra UI e GraphQL (Apollo), gerenciando estado com Redux Toolkit e React Context.",
+        "Implementei comunicação em tempo real para autenticação 3DS em transações de cartão de crédito, melhorando a segurança e prevenindo fraudes.",
+        "Desenvolvi vitrine de produtos customizável e uma interface para cadastro e edição de produtos com upload de imagens para AWS S3.",
+        "Colaborei no back-end (TypeScript) ao conectar APIs REST ao BFF em GraphQL, correções de bugs e pequenas melhorias.",
+        "Assegurei qualidade do sistema criando testes extensivos com Playwright e monitoramento com Datadog para depuração de problemas."
       ]
     },
     {
@@ -49,11 +49,11 @@
       "endDate": "2025-02-01",
       "location": "Remoto",
       "highlights": [
-        "Liderei o desenvolvimento front-end do Business Center, aplicação central de gerenciamento que contribuiu para retenção de clientes, utilizando React e TypeScript.",
-        "Me tornei referência técnica da nova biblioteca de componentes reutilizáveis, sendo responsável por code reviews e design de APIs intuitivas, com documentação em Storybook.",
-        "Colaborei para implementar e manter a arquitetura de micro-frontends com Single SPA e webpack, sustentando múltiplos aplicativos de times independentes.",
-        "Melhorei a estabilidade da plataforma escrevendo testes de integração com Playwright e React Testing Library.",
-        "Colaborei estreitamente com a equipe de back-end para integrar APIs REST em aplicativos React utilizando bibliotecas modernas de data fetching (swr, react-query)."
+        "Liderei o desenvolvimento do Business Center da nova plataforma, sendo responsável pela maioria das funcionalidades.",
+        "Colaborei na arquitetura de micro-frontends da nova plataforma, utilizando Single SPA e webpack, que sustentou o desenvolvimento de times independentes e contribuiu para retenção de clientes.",
+        "Liderei o desenvolvimento da biblioteca de componentes reutilizáveis com mais de 70 componentes, realizando code reviews rigorosos e mantendo documentação extensiva em Storybook.",
+        "Realizei a integração com REST APIs utilizando SWR, TanStack Query e gerenciamento de estado com React Context e Redux Saga (aplicativo legado)",
+        "Melhorei a estabilidade da plataforma escrevendo testes de integração com Playwright e React Testing Library."
       ]
     },
     {
@@ -66,8 +66,7 @@
       "highlights": [
         "Desenvolvi aplicativos web com Create React App e Next.js em TypeScript, utilizando Material UI.",
         "Desenvolvi aplicativos mobile com React Native, utilizando react-native-cli e Expo.",
-        "Aprimorei o monitoramento de erros em produção para aplicativos web e mobile integrando Sentry nas pipelines de GitLab CI/CD, acelerando a identificação e resolução de bugs.",
-        "Melhorei a estabilidade nas plataformas web e mobile escrevendo testes de integração usando Cypress e React Testing Library."
+        "Melhorei a estabilidade nas plataformas web e mobile escrevendo testes de integração utilizando Cypress e React Testing Library, com monitoramento no Sentry para rapidamente identificar problemas."
       ]
     }
   ],

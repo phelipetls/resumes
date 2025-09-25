@@ -34,11 +34,11 @@
       "endDate": "2025-09-01",
       "location": "Remote",
       "highlights": [
-        "Developed web applications with TypeScript, React, Next.js, Vite, Chakra UI, and GraphQL (Apollo).",
-        "Implemented 3D Secure (3DS) integration in the payment flow and a checkout supporting multiple payment methods and payers.",
-        "Developed a customizable product showcase with features for creation, editing, and customization.",
-        "Collaborated on the back-end (TypeScript), connecting REST APIs to a GraphQL BFF and applying minor improvements and bug fixes.",
-        "Ensured system quality by creating integration tests with Playwright for critical flows and using Datadog for monitoring, alert creation, and back-end debugging through logs."
+        "Developed internationalized web applications with TypeScript, React, Next.js (next-i18next), Vite, Chakra UI and GraphQL (Apollo), managing state with Redux Toolkit and React Context.",
+        "Implemented real-time communication for 3DS authentication in credit card transactions, improving security and preventing fraud.",
+        "Developed a customizable product storefront and an interface for creating and editing products with image upload to AWS S3.",
+        "Collaborated on the back-end (TypeScript) by connecting REST APIs to GraphQL BFF, bug fixes and small improvements.",
+        "Ensured system quality by creating extensive tests with Playwright and monitoring with Datadog to debug issues."
       ]
     },
     {
@@ -49,11 +49,11 @@
       "endDate": "2025-02-01",
       "location": "Remote",
       "highlights": [
-        "Led the front-end development for the company's new Business Center, building the user interface and core features using React and TypeScript.",
-        "Contributed significantly to the development of the reusable component library, focusing on accessibility and intuitive API design, with Storybook documentation.",
-        "Collaborated to implement and maintain the micro-frontends architecture foundation using Single SPA and webpack, supporting multiple application teams.",
-        "Contributed to the platform's stability by writing integration tests with Playwright and React Testing Library.",
-        "Collaborated closely with back-end team to integrate REST APIs into React applications using modern data fetching libraries (swr, react-query)."
+        "Led the development of the new platform's Business Center, being responsible for most of the functionalities.",
+        "Collaborated on the new platform's micro-frontend architecture using Single SPA and webpack, which supported independent team development and contributed to customer retention.",
+        "Led the development of the reusable component library with over 70 components, conducting rigorous code reviews and maintaining extensive documentation in Storybook.",
+        "Performed integration with REST APIs using SWR, TanStack Query and state management with React Context and Redux Saga (legacy application).",
+        "Improved platform stability by writing integration tests with Playwright and React Testing Library."
       ]
     },
     {
@@ -65,9 +65,8 @@
       "location": "Remote",
       "highlights": [
         "Developed web applications with Create React App and Next.js in TypeScript, using Material UI.",
-        "Developed mobile products with React Native, using react-native-cli and Expo.",
-        "Enhanced production error monitoring for web and mobile applications by integrating Sentry on GitLab CI/CD pipelines, accelerating bug identification and resolution.",
-        "Improve stability on web and mobile platform by writing integration tests using Cypress and React Testing Library."
+        "Developed mobile applications with React Native, using react-native-cli and Expo.",
+        "Improved stability on web and mobile platforms by writing integration tests using Cypress and React Testing Library, while monitoring with Sentry to quickly identify issues."
       ]
     }
   ],
@@ -82,7 +81,6 @@
       "location": "Seropédica, RJ"
     }
   ],
-
   "languages": [
     {
       "language": "English",
