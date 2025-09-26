@@ -63,10 +63,9 @@ console.log(`Will render ${templatePath}`)
 const renderedSite = nunjucks.render(templatePath, {
   languages,
   defaultLanguage: "pt-BR",
-  defaultFormat: "html",
   urls: {
     html: applyToObjectValues(htmlPaths, pathToRelativeUrl),
-    pdf: applyToObjectValues(pdfPaths, (path) => `${pathToRelativeUrl(path)}#toolbar=0`)
+    pdf: applyToObjectValues(pdfPaths, pathToRelativeUrl)
   }
 });
 console.log(`Rendered ${templatePath}`)

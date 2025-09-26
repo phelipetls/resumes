@@ -30,41 +30,24 @@
             </div>
           </div>
 
-          <div role="tablist" class="tabs tabs-border flex flex-row relative">
-            {% for format in ["html", "pdf"] %}
-              <input
-                type="radio"
-                role="tab"
-                class="tab"
-                name="format"
-                value="{{ format }}"
-                aria-label="{{ format | upper }}"
-                {% if format === defaultFormat %}checked{% endif %}
-              />
+          <div class="w-full">
+            <iframe
+              data-resume-iframe
+              src="{{ urls['html'][defaultLanguage] }}"
+              class="w-full border-0"
+            >
+            </iframe>
 
-              <div role="tabpanel" class="tab-content">
-                <iframe
-                  data-resume-iframe="{{ format }}"
-                  src="{{ urls[format][defaultLanguage] }}"
-                  class="w-full border-0"
-                  {% if format == 'pdf' %}style="min-height: 11in;"{% endif %}
-                >
-                </iframe>
-
-                {% if format === "pdf" %}
-                  <div class="mt-2 flex justify-center">
-                    <a
-                      data-download-pdf-button
-                      class="btn btn-neutral btn-wide"
-                      download
-                      href="{{ urls['pdf'][defaultLanguage] }}"
-                    >
-                      Download
-                    </a>
-                  </div>
-                {% endif %}
-              </div>
-            {% endfor %}
+            <div class="mt-4 flex justify-center">
+              <a
+                data-pdf-button
+                class="btn btn-neutral btn-wide"
+                href="{{ urls['pdf'][defaultLanguage] }}"
+                target="_blank"
+              >
+                Open PDF version
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -93,66 +76,28 @@
         return resumesUrls[format][language];
       };
 
-      const languageSwitcher = document.querySelector(
-        "[data-language-switcher]",
-      );
+      const languageSwitcher = document.querySelector("[data-language-switcher]");
+      const iframe = document.querySelector("[data-resume-iframe]");
+      const pdfButton = document.querySelector("[data-pdf-button]");
 
-      const getSelectedFormat = () => {
-        return document.querySelector("[role=tab][name=format]:checked").value;
+      const handleLanguageChange = () => {
+        const selectedLanguage = languageSwitcher.value;
+
+        const newHtmlUrl = getResumeUrl("html", selectedLanguage);
+        iframe.src = newHtmlUrl;
+
+        const newPdfUrl = getResumeUrl("pdf", selectedLanguage);
+        pdfButton.href = newPdfUrl;
+
+        document.documentElement.setAttribute("lang", selectedLanguage);
       };
 
-      const getSelectedLanguage = () => {
-        return languageSwitcher.value;
-      };
+      languageSwitcher.addEventListener("change", handleLanguageChange);
 
-      const getCurrentIframe = () => {
-        return document.querySelector(
-          `[data-resume-iframe=${getSelectedFormat()}]`,
-        );
-      };
-
-      const updateIframeUrl = () => {
-        const selectedLanguage = getSelectedLanguage();
-        const selectedFormat = getSelectedFormat();
-        const newUrl = getResumeUrl(selectedFormat, selectedLanguage);
-        const iframe = getCurrentIframe();
-        iframe.src = newUrl;
-      };
-
-      const tabs = document.querySelectorAll("[role=tab]");
-      for (const tab of tabs) {
-        tab.addEventListener("change", updateIframeUrl);
-      }
-
-      const downloadBtn = document.querySelector("[data-download-pdf-button]");
-
-      const updateDownloadPdfButton = () => {
-        const selectedFormat = getSelectedFormat();
-        const selectedLanguage = getSelectedLanguage();
-        const url = getResumeUrl("pdf", selectedLanguage);
-        downloadBtn.href = url;
-      };
-
-      const handleResumeChange = () => {
-        updateIframeUrl();
-        updateDownloadPdfButton();
-      };
-
-      languageSwitcher.addEventListener("change", (e) => {
-        handleResumeChange();
-        document.documentElement.setAttribute("lang", e.target.value);
-      });
-
-      for (const tab of tabs) {
-        tab.addEventListener("change", () => {
-          handleResumeChange();
-        });
-      }
-
-      document.querySelector('[data-resume-iframe=html]').addEventListener('load', (e) => {
+      iframe.addEventListener('load', (e) => {
         const iframe = e.target;
         iframe.style.height = iframe.contentDocument.documentElement.scrollHeight + 'px';
-      })
+      });
     </script>
   </body>
 </html>
