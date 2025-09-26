@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+
+    html {
+      font-size: 16px;
+      --horizontal-padding: 8px;
+      --vertical-padding: 48px;
+    }
+
+    @media (min-width: 720px) {
+      html {
+        --vertical-padding: 48px;
+        --horizontal-padding: 0px;
+      }
+    }
+
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--vertical-padding) var(--horizontal-padding);
+      font-family: "Crimson Text", serif;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 0.5rem 0;
+    }
+
+    h2 {
+      font-size: calc(1rem + 2px);
+      font-weight: 600;
+      border-bottom: 1px solid #000;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.2rem;
+    }
+
+    .subheader {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .subheader li {
+      display: flex;
+      align-items: center;
+      gap: inherit;
+      white-space: nowrap;
+    }
+
+    .subheader li:not(:last-of-type):after {
+      content: "·"
+    }
+
+    .subheader a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .subheader a:hover {
+      text-decoration: underline;
+    }
+
+    .subsectionHeader {
+      width: 100%;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    .subsectionHeader td {
+      padding: 0;
+    }
+
+    .subsectionHeader tr:first-child td:first-child {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .subsectionHeader tr td:last-child {
+      text-align: right;
+    }
+
+    ul {
+      list-style: disc outside;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul.highlights li {
+      margin-bottom: 8px;
+    }
+
+    ul.highlights {
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+  </style>
+  <title>Resumé | Phelipe Teles</title>
+</head>
+
+<body>
+  <h1>PHELIPE TELES DA SILVA</h1>
+
+  <ul class="subheader">
+    <li>Jan 30, 1996</li>
+    <li>Rio de Janeiro, RJ</li>
+  </ul>
+
+  <ul class="subheader">
+    <li>
+      <i class="fa-solid fa-envelope"></i>
+      <a href="mailto:phelipe_teles@hotmail.com">phelipe_teles@hotmail.com</a>
+    </li>
+    <li>
+      <i class="fa-solid fa-globe"></i>
+      <a href="https://phelipetls.github.io">phelipetls.github.io</a>
+    </li>
+    
+    <li>
+      <i class="fa-brands fa-github"></i>
+      <a href="https://github.com/phelipetls">phelipetls</a>
+    </li>
+    
+    <li>
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/phelipeteles/">phelipeteles</a>
+    </li>
+    
+  </ul>
+
+  <h2>EXPERIÊNCIA</h2>
+  
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://www.sqala.com.br/">SqalaPay Pagamentos</a></td>
+        <td>Feb 2025 — Sep 2025</td>
+      </tr>
+
+      <tr>
+        <td>Desenvolvedor Front-end</td>
+        <td>Remoto</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="highlights">
+    
+    <li>Desenvolvi aplicações web internacionalizadas com TypeScript, React, Next.js (next-i18next), Vite, Chakra UI e GraphQL (Apollo), gerenciando estado com Redux Toolkit e React Context.</li>
+    
+    <li>Implementei comunicação em tempo real para autenticação 3DS em transações de cartão de crédito, melhorando a segurança e prevenindo fraudes.</li>
+    
+    <li>Desenvolvi vitrine de produtos customizável e uma interface para cadastro e edição de produtos com upload de imagens para AWS S3.</li>
+    
+    <li>Colaborei no back-end (TypeScript) ao conectar APIs REST ao BFF em GraphQL, correções de bugs e pequenas melhorias.</li>
+    
+    <li>Assegurei qualidade do sistema criando testes extensivos com Playwright e monitoramento com Datadog para depuração de problemas.</li>
+    
+  </ul>
+  
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://bornlogic.com">Bornlogic</a></td>
+        <td>Aug 2022 — Feb 2025</td>
+      </tr>
+
+      <tr>
+        <td>Desenvolvedor Front-end</td>
+        <td>Remoto</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="highlights">
+    
+    <li>Liderei o desenvolvimento do Business Center da nova plataforma, sendo responsável pela maioria das funcionalidades.</li>
+    
+    <li>Colaborei na arquitetura de micro-frontends da nova plataforma, utilizando Single SPA e webpack, que sustentou o desenvolvimento de times independentes e contribuiu para retenção de clientes.</li>
+    
+    <li>Liderei o desenvolvimento da biblioteca de componentes reutilizáveis com mais de 70 componentes, realizando code reviews rigorosos e mantendo documentação extensiva em Storybook.</li>
+    
+    <li>Realizei a integração com REST APIs utilizando SWR, TanStack Query e gerenciamento de estado com React Context e Redux Saga (aplicativo legado)</li>
+    
+    <li>Melhorei a estabilidade da plataforma escrevendo testes de integração com Playwright e React Testing Library.</li>
+    
+  </ul>
+  
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://mutual.club">Mutual</a></td>
+        <td>Dec 2020 — Aug 2022</td>
+      </tr>
+
+      <tr>
+        <td>Desenvolvedor Front-end</td>
+        <td>Remoto</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="highlights">
+    
+    <li>Desenvolvi aplicativos web com Create React App e Next.js em TypeScript, utilizando Material UI.</li>
+    
+    <li>Desenvolvi aplicativos mobile com React Native, utilizando react-native-cli e Expo.</li>
+    
+    <li>Melhorei a estabilidade nas plataformas web e mobile escrevendo testes de integração utilizando Cypress e React Testing Library, com monitoramento no Sentry para rapidamente identificar problemas.</li>
+    
+  </ul>
+  
+
+  
+
+  <h2>FORMAÇÃO</h2>
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://portal.ufrrj.br/">Universidade Federal Rural do Rio de Janeiro</a></td>
+        <td>Jan 2015 — Jan 2020</td>
+      </tr>
+
+      <tr>
+        <td>Ciências Econômicas</td>
+        <td>Seropédica, RJ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>IDIOMAS</h2>
+  
+  <ul>
+    <li>Inglês: Fluente</li>
+  </ul>
+  
+</body>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumés | Phelipe Teles</title>
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-gradient-to-br from-base-200 to-base-300 p-4 sm:p-8">
+    
+    <div class="max-w-5xl mx-auto">
+      <div class="card bg-base-100 shadow-2xl">
+        <div class="card-body">
+          <div
+            class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4"
+          >
+            <h1 class="text-2xl font-bold">Phelipe Teles :: Resumés</h1>
+            <div class="flex items-center gap-2">
+              <select data-language-switcher class="select select-bordered">
+                
+                  <option
+                    value="en-US"
+                    
+                  >
+                    English
+                  </option>
+                
+                  <option
+                    value="pt-BR"
+                    selected
+                  >
+                    Português
+                  </option>
+                
+              </select>
+            </div>
+          </div>
+
+          <div class="w-full">
+            <iframe
+              data-resume-iframe
+              src="Phelipe_Teles_Desenvolvedor_Frontend.html"
+              class="w-full border-0"
+            >
+            </iframe>
+
+            <div class="mt-4 flex justify-center">
+              <a
+                data-pdf-button
+                class="btn btn-neutral btn-wide"
+                href="Phelipe_Teles_Desenvolvedor_Frontend.pdf"
+                target="_blank"
+              >
+                Open PDF version
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      data-resume-html-pt-br="Phelipe_Teles_Desenvolvedor_Frontend.html"
+      data-resume-html-en-us="Phelipe_Teles_Frontend_Developer.html"
+      data-resume-pdf-pt-br="Phelipe_Teles_Desenvolvedor_Frontend.pdf"
+      data-resume-pdf-en-us="Phelipe_Teles_Frontend_Developer.pdf"
+    >
+      const currentScript = document.currentScript;
+
+      const resumesUrls = {
+        html: {
+          "pt-BR": currentScript.dataset.resumeHtmlPtBr,
+          "en-US": currentScript.dataset.resumeHtmlEnUs,
+        },
+        pdf: {
+          "pt-BR": currentScript.dataset.resumePdfPtBr,
+          "en-US": currentScript.dataset.resumePdfEnUs,
+        },
+      };
+
+      const getResumeUrl = (format, language) => {
+        return resumesUrls[format][language];
+      };
+
+      const languageSwitcher = document.querySelector("[data-language-switcher]");
+      const iframe = document.querySelector("[data-resume-iframe]");
+      const pdfButton = document.querySelector("[data-pdf-button]");
+
+      const handleLanguageChange = () => {
+        const selectedLanguage = languageSwitcher.value;
+
+        const newHtmlUrl = getResumeUrl("html", selectedLanguage);
+        iframe.src = newHtmlUrl;
+
+        const newPdfUrl = getResumeUrl("pdf", selectedLanguage);
+        pdfButton.href = newPdfUrl;
+
+        document.documentElement.setAttribute("lang", selectedLanguage);
+      };
+
+      languageSwitcher.addEventListener("change", handleLanguageChange);
+
+      iframe.addEventListener('load', (e) => {
+        const iframe = e.target;
+        iframe.style.height = iframe.contentDocument.documentElement.scrollHeight + 'px';
+      });
+    </script>
+  </body>
+</html>
