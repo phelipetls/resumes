@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap");
+
+[data-resume-content] {
+  --horizontal-padding: 8px;
+  --vertical-padding: 48px;
+}
+
+@media (min-width: 720px) {
+  [data-resume-content] {
+    --vertical-padding: 48px;
+    --horizontal-padding: 0px;
+  }
+}
+
+[data-resume-content] {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  font-family: "Crimson Text", serif;
+  color: #000;
+}
+
+[data-resume-content] h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+[data-resume-content] h2 {
+  font-size: calc(1rem + 2px);
+  font-weight: 600;
+  border-bottom: 1px solid #000;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.2rem;
+}
+
+.subheader {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.subheader li {
+  display: flex;
+  align-items: center;
+  gap: inherit;
+  white-space: nowrap;
+}
+
+.subheader li:not(:last-of-type):after {
+  content: "·";
+}
+
+.subheader a {
+  color: #000;
+  text-decoration: none;
+}
+
+.subheader a:hover {
+  text-decoration: underline;
+}
+
+.subsectionHeader {
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.subsectionHeader td {
+  padding: 0;
+}
+
+.subsectionHeader tr:first-child td:first-child {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.subsectionHeader tr td:last-child {
+  text-align: right;
+}
+
+[data-resume-content] ul {
+  list-style: disc outside;
+  margin: 0;
+  padding: 0;
+}
+
+ul.highlights li {
+  margin-bottom: 8px;
+}
+
+[data-resume-content] a {
+  color: #000;
+  text-decoration: none;
+}

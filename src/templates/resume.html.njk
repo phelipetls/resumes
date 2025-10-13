@@ -1,146 +1,29 @@
-<!DOCTYPE html>
+<h1>{{ basics.name | upper }}</h1>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<ul class="subheader">
+  <li>{{ basics.birthday | birthday }}</li>
+  <li>{{ basics.location.city }}, {{ basics.location.region }}</li>
+</ul>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
-
-    html {
-      font-size: 16px;
-      --horizontal-padding: 8px;
-      --vertical-padding: 48px;
-    }
-
-    @media (min-width: 720px) {
-      html {
-        --vertical-padding: 48px;
-        --horizontal-padding: 0px;
-      }
-    }
-
-    body {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: var(--vertical-padding) var(--horizontal-padding);
-      font-family: "Crimson Text", serif;
-      color: #000;
-    }
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      text-align: center;
-      margin: 0 0 0.5rem 0;
-    }
-
-    h2 {
-      font-size: calc(1rem + 2px);
-      font-weight: 600;
-      border-bottom: 1px solid #000;
-      margin: 2rem 0 1rem 0;
-      padding-bottom: 0.2rem;
-    }
-
-    .subheader {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
-    }
-
-    .subheader li {
-      display: flex;
-      align-items: center;
-      gap: inherit;
-      white-space: nowrap;
-    }
-
-    .subheader li:not(:last-of-type):after {
-      content: "·"
-    }
-
-    .subheader a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    .subheader a:hover {
-      text-decoration: underline;
-    }
-
-    .subsectionHeader {
-      width: 100%;
-      margin-top: 16px;
-      margin-bottom: 8px;
-    }
-
-    .subsectionHeader td {
-      padding: 0;
-    }
-
-    .subsectionHeader tr:first-child td:first-child {
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .subsectionHeader tr td:last-child {
-      text-align: right;
-    }
-
-    ul {
-      list-style: disc outside;
-      margin: 0;
-      padding: 0;
-    }
-
-    ul.highlights li {
-      margin-bottom: 8px;
-    }
-
-    ul.highlights {
-    }
-
-    a {
-      color: #000;
-      text-decoration: none;
-    }
-  </style>
-  <title>Resumé | Phelipe Teles</title>
-</head>
-
-<body>
-  <h1>{{ basics.name | upper }}</h1>
-
-  <ul class="subheader">
-    <li>{{ basics.birthday | birthday }}</li>
-    <li>{{ basics.location.city }}, {{ basics.location.region }}</li>
-  </ul>
-
-  <ul class="subheader">
-    <li>
-      <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:{{ basics.email }}">{{ basics.email }}</a>
-    </li>
-    <li>
-      <i class="fa-solid fa-globe"></i>
-      <a href="{{ basics.url }}">{{ basics.url | replace("https://", "") }}</a>
-    </li>
-    {% for profile in basics.profiles %}
+<ul class="subheader">
+  <li>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:{{ basics.email }}">{{ basics.email }}</a>
+  </li>
+  <li>
+    <i class="fa-solid fa-globe"></i>
+    <a href="{{ basics.url }}">{{ basics.url | replace("https://", "") }}</a>
+  </li>
+  {% for profile in basics.profiles %}
     <li>
       <i class="fa-brands fa-{{ profile.network | lower }}"></i>
       <a href="{{ profile.url }}">{{ profile.username }}</a>
     </li>
-    {% endfor %}
-  </ul>
+  {% endfor %}
+</ul>
 
-  <h2>{{ translations.sections.work }}</h2>
-  {% for job in work %}
+<h2>{{ translations.sections.work }}</h2>
+{% for job in work %}
   <table class="subsectionHeader">
     <tbody>
       <tr>
@@ -157,50 +40,53 @@
 
   <ul class="highlights">
     {% for highlight in job.highlights %}
-    <li>{{ highlight }}</li>
+      <li>{{ highlight }}</li>
     {% endfor %}
   </ul>
-  {% endfor %}
+{% endfor %}
 
-  {% if projects and projects.length %}
+{% if projects and projects.length %}
   <h2>{{ translations.sections.projects }}</h2>
   {% for project in projects %}
-  <table class="subsectionHeader">
-    <tbody>
-      <tr>
-        <td>{{ project.name }}</td>
-        <td>{{ project.startDate | formatPeriod(project.endDate) }}</td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="subsectionHeader">
+      <tbody>
+        <tr>
+          <td>{{ project.name }}</td>
+          <td>{{ project.startDate | formatPeriod(project.endDate) }}</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <ul>
-    {% for highlight in project.highlights %}
-    <li>{{ highlight }}</li>
-    {% endfor %}
-  </ul>
+    <ul>
+      {% for highlight in project.highlights %}
+        <li>{{ highlight }}</li>
+      {% endfor %}
+    </ul>
   {% endfor %}
-  {% endif %}
+{% endif %}
 
-  <h2>{{ translations.sections.education }}</h2>
-  <table class="subsectionHeader">
-    <tbody>
-      <tr>
-        <td><a href="{{ education[0].url }}">{{ education[0].institution }}</a></td>
-        <td>{{ education[0].startDate | formatPeriod(education[0].endDate) }}</td>
-      </tr>
+<h2>{{ translations.sections.education }}</h2>
+<table class="subsectionHeader">
+  <tbody>
+    <tr>
+      <td>
+        <a href="{{ education[0].url }}">{{ education[0].institution }}</a>
+      </td>
+      <td>
+        {{ education[0].startDate | formatPeriod(education[0].endDate) }}
+      </td>
+    </tr>
 
-      <tr>
-        <td>{{ education[0].area }}</td>
-        <td>{{ education[0].location }}</td>
-      </tr>
-    </tbody>
-  </table>
+    <tr>
+      <td>{{ education[0].area }}</td>
+      <td>{{ education[0].location }}</td>
+    </tr>
+  </tbody>
+</table>
 
-  <h2>{{ translations.sections.languages }}</h2>
-  {% for language in languages %}
+<h2>{{ translations.sections.languages }}</h2>
+{% for language in languages %}
   <ul>
     <li>{{ language.language }}: {{ language.fluency }}</li>
   </ul>
-  {% endfor %}
-</body>
+{% endfor %}

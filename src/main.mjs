@@ -1,5 +1,5 @@
 import Nunjucks from "nunjucks";
-import { writeFile, mkdir } from "fs/promises";
+import { writeFile, mkdir, readFile } from "fs/promises";
 import { build as buildPdf } from './build-pdf.mjs'
 import { build as buildHtml } from './build-html.mjs'
 import { join, dirname, relative } from 'node:path'
@@ -24,48 +24,35 @@ const languages = [
   { code: "pt-BR", name: "Português" },
 ];
 
+const resumeCssStyles = `<style>${await readFile(join(__dirname, "resume.css"))}</style>`
+
 await Promise.all(
   languages.map(lang => mkdir(join(OUT_DIR, lang.code), { recursive: true }))
 );
 
-const pdfPaths = {
-  "en-US": join(OUT_DIR, 'Phelipe_Teles_Frontend_Developer.pdf'),
-  "pt-BR": join(OUT_DIR, 'Phelipe_Teles_Desenvolvedor_Frontend.pdf'),
+async function buildAndWritePdf(language, fileName) {
+  const pdf = await buildPdf(language.code);
+  const filePath = join(OUT_DIR, fileName)
+  await writeFile(filePath, pdf);
+  return relative(OUT_DIR, fileName)
 }
-
-await Promise.all(
-  languages.map(async (language) => {
-    const pdf = await buildPdf(language.code);
-    await writeFile(pdfPaths[language.code], pdf);
-  })
-);
-
-const htmlPaths = {
-  "en-US": join(OUT_DIR, 'Phelipe_Teles_Frontend_Developer.html'),
-  "pt-BR": join(OUT_DIR, 'Phelipe_Teles_Desenvolvedor_Frontend.html'),
-}
-
-await Promise.all(
-  languages.map(async (language) => {
-    const html = await buildHtml(language.code);
-    await writeFile(htmlPaths[language.code], html);
-  })
-);
 
 const nunjucks = Nunjucks.configure({ autoescape: true });
 
 const templatePath = join(__dirname, "templates", "site.html.njk")
 
-const pathToRelativeUrl = (path) => relative(OUT_DIR, path)
-const applyToObjectValues = (obj, fn) => Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, fn(value)]))
-
 console.log(`Will render ${templatePath}`)
 const renderedSite = nunjucks.render(templatePath, {
   languages,
   defaultLanguage: "pt-BR",
-  urls: {
-    html: applyToObjectValues(htmlPaths, pathToRelativeUrl),
-    pdf: applyToObjectValues(pdfPaths, pathToRelativeUrl)
+  resumeCssStyles,
+  pdfUrls: {
+    "pt-BR": await buildAndWritePdf("pt-BR", 'Phelipe_Teles_Desenvolvedor_Frontend.html'),
+    "en-US": await buildAndWritePdf("en-US", 'Phelipe_Teles_Frontend_Developer.html')
+  },
+  htmlContents: {
+    "pt-BR": await buildHtml("pt-BR"),
+    "en-US": await buildHtml("en-US"),
   }
 });
 console.log(`Rendered ${templatePath}`)

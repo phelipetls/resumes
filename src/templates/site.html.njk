@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resumés | Phelipe Teles</title>
     <link href="./styles.css" rel="stylesheet" />
+    {{ resumeCssStyles | safe }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   </head>
 
   <body class="bg-gradient-to-br from-base-200 to-base-300 p-4 sm:p-8">
@@ -30,18 +32,21 @@
           </div>
 
           <div class="w-full">
-            <iframe
-              data-resume-iframe
-              src="{{ urls['html'][defaultLanguage] }}"
-              class="w-full border-0"
-            >
-            </iframe>
+            {% for language in languages %}
+              <div
+                data-resume-content
+                data-language="{{ language.code }}"
+                style="display: {{ 'block' if language.code === defaultLanguage else 'none' }};"
+              >
+                {{ htmlContents[language.code] | safe }}
+              </div>
+            {% endfor %}
 
             <div class="mt-4 flex justify-center">
               <a
                 data-pdf-button
                 class="btn btn-neutral btn-wide"
-                href="{{ urls['pdf'][defaultLanguage] }}"
+                href="{{ pdfUrls[defaultLanguage] }}"
                 target="_blank"
               >
                 Open PDF version
@@ -53,50 +58,39 @@
     </div>
 
     <script
-      data-resume-html-pt-br="{{ urls['html']['pt-BR'] }}"
-      data-resume-html-en-us="{{ urls['html']['en-US'] }}"
-      data-resume-pdf-pt-br="{{ urls['pdf']['pt-BR'] }}"
-      data-resume-pdf-en-us="{{ urls['pdf']['en-US'] }}"
+      data-resume-pdf-pt-br="{{ pdfUrls['pt-BR'] }}"
+      data-resume-pdf-en-us="{{ pdfUrls['en-US'] }}"
     >
       const currentScript = document.currentScript;
 
-      const resumesUrls = {
-        html: {
-          "pt-BR": currentScript.dataset.resumeHtmlPtBr,
-          "en-US": currentScript.dataset.resumeHtmlEnUs,
-        },
-        pdf: {
-          "pt-BR": currentScript.dataset.resumePdfPtBr,
-          "en-US": currentScript.dataset.resumePdfEnUs,
-        },
+      const pdfUrls = {
+        "pt-BR": currentScript.dataset.resumePdfPtBr,
+        "en-US": currentScript.dataset.resumePdfEnUs,
       };
 
-      const getResumeUrl = (format, language) => {
-        return resumesUrls[format][language];
-      };
-
-      const languageSwitcher = document.querySelector("[data-language-switcher]");
-      const iframe = document.querySelector("[data-resume-iframe]");
+      const languageSwitcher = document.querySelector(
+        "[data-language-switcher]",
+      );
       const pdfButton = document.querySelector("[data-pdf-button]");
+      const htmlContents = document.querySelector("[data-resume-content]");
 
       const handleLanguageChange = () => {
         const selectedLanguage = languageSwitcher.value;
 
-        const newHtmlUrl = getResumeUrl("html", selectedLanguage);
-        iframe.src = newHtmlUrl;
+        for (const htmlContent of htmlContents) {
+          htmlContent.style.display =
+            htmlContent.dataset.language === selectedLanguage
+              ? "block"
+              : "none";
+        }
 
-        const newPdfUrl = getResumeUrl("pdf", selectedLanguage);
+        const newPdfUrl = pdfUrls[selectedLanguage];
         pdfButton.href = newPdfUrl;
 
         document.documentElement.setAttribute("lang", selectedLanguage);
       };
 
       languageSwitcher.addEventListener("change", handleLanguageChange);
-
-      iframe.addEventListener('load', (e) => {
-        const iframe = e.target;
-        iframe.style.height = iframe.contentDocument.documentElement.scrollHeight + 'px';
-      });
     </script>
   </body>
 </html>
