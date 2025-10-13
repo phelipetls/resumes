@@ -7,7 +7,7 @@
     "build:site": "cross-env-shell node ./src/main.mjs",
     "build:css": "cross-env-shell npx @tailwindcss/cli -i ./src/app.css -o ./$OUT_DIR/styles.css",
     "dev": "cross-env NODE_ENV=development OUT_DIR=dist concurrently --names=tailwind,site \"npm run dev:css\" \"npm run dev:site\"",
-    "dev:site": "nodemon ./src/main.mjs -e mjs,njk,json",
+    "dev:site": "nodemon ./src/main.mjs -e mjs,njk,json,css",
     "dev:css": "cross-env-shell npx @tailwindcss/cli -i ./src/app.css -o ./$OUT_DIR/styles.css --watch"
   },
   "dependencies": {
