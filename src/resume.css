@@ -2,12 +2,11 @@
 
 [data-resume-content] {
   --horizontal-padding: 8px;
-  --vertical-padding: 48px;
+  --vertical-padding: 16px;
 }
 
 @media (min-width: 720px) {
   [data-resume-content] {
-    --vertical-padding: 48px;
     --horizontal-padding: 0px;
   }
 }
