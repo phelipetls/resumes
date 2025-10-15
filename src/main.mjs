@@ -34,7 +34,7 @@ async function buildAndWritePdf(language, fileName) {
   const pdf = await buildPdf(language.code);
   const filePath = join(OUT_DIR, fileName);
   await writeFile(filePath, pdf);
-  return relative(OUT_DIR, fileName);
+  return relative(OUT_DIR, filePath);
 }
 
 const nunjucks = Nunjucks.configure({ autoescape: true });
