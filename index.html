@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumés | Phelipe Teles</title>
+    <link href="./styles.css" rel="stylesheet" />
+    <style>@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap");
+
+[data-resume-content] {
+  --horizontal-padding: 8px;
+  --vertical-padding: 16px;
+}
+
+@media (min-width: 720px) {
+  [data-resume-content] {
+    --horizontal-padding: 0px;
+  }
+}
+
+[data-resume-content] {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  font-family: "Crimson Text", serif;
+  color: #000;
+}
+
+[data-resume-content] h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+[data-resume-content] h2 {
+  font-size: calc(1rem + 2px);
+  font-weight: 600;
+  border-bottom: 1px solid #000;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.2rem;
+}
+
+.subheader {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.subheader li {
+  display: flex;
+  align-items: center;
+  gap: inherit;
+  white-space: nowrap;
+}
+
+.subheader li:not(:last-of-type):after {
+  content: "·";
+}
+
+.subheader a {
+  color: #000;
+  text-decoration: none;
+}
+
+.subheader a:hover {
+  text-decoration: underline;
+}
+
+.subsectionHeader {
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.subsectionHeader td {
+  padding: 0;
+}
+
+.subsectionHeader tr:first-child td:first-child {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.subsectionHeader tr td:last-child {
+  text-align: right;
+}
+
+[data-resume-content] ul {
+  list-style: disc outside;
+  margin: 0;
+  padding: 0;
+}
+
+ul.highlights li {
+  margin-bottom: 8px;
+}
+
+[data-resume-content] a {
+  color: #000;
+  text-decoration: none;
+}
+</style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-gradient-to-br from-base-200 to-base-300 p-4 sm:p-8">
+    <div class="max-w-5xl mx-auto">
+      <div class="card bg-base-100 shadow-2xl">
+        <div class="card-body">
+          <div
+            class="flex flex-col sm:flex-row justify-between items-center gap-4"
+          >
+            <h1 class="text-2xl font-bold">Phelipe Teles :: Resumés</h1>
+            <div class="flex items-center gap-2">
+              <select data-language-switcher class="select select-bordered">
+                
+                  <option
+                    value="en-US"
+                    
+                  >
+                    English
+                  </option>
+                
+                  <option
+                    value="pt-BR"
+                    selected
+                  >
+                    Português
+                  </option>
+                
+              </select>
+            </div>
+          </div>
+
+          <div class="w-full">
+            
+              <div
+                data-resume-content
+                data-language="en-US"
+                style="display: none;"
+              >
+                <h1>PHELIPE TELES DA SILVA</h1>
+
+<ul class="subheader">
+  <li>Jan 30, 1996</li>
+  <li>Rio de Janeiro, RJ</li>
+</ul>
+
+<ul class="subheader">
+  <li>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:phelipe_teles@hotmail.com">phelipe_teles@hotmail.com</a>
+  </li>
+  <li>
+    <i class="fa-solid fa-globe"></i>
+    <a href="https://phelipetls.github.io">phelipetls.github.io</a>
+  </li>
+  
+    <li>
+      <i class="fa-brands fa-github"></i>
+      <a href="https://github.com/phelipetls">phelipetls</a>
+    </li>
+  
+    <li>
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/phelipeteles/">phelipeteles</a>
+    </li>
+  
+</ul>
+
+<h2>EXPERIENCE</h2>
+
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://www.sqala.com.br/">SqalaPay Pagamentos</a></td>
+        <td>Feb 2025 — Sep 2025</td>
+      </tr>
+
+      <tr>
+        <td>Front-end Developer</td>
+        <td>Remote</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="highlights">
+    
+      <li>Developed internationalized web applications with TypeScript, React, Next.js (next-i18next), Vite, Chakra UI and GraphQL (Apollo), managing state with Redux Toolkit and React Context.</li>
+    
+      <li>Implemented real-time communication for 3DS authentication in credit card transactions, improving security and preventing fraud.</li>
+    
+      <li>Developed a customizable product storefront and an interface for creating and editing products with image upload to AWS S3.</li>
+    
+      <li>Collaborated on the back-end (TypeScript) by connecting REST APIs to GraphQL BFF, bug fixes and small improvements.</li>
+    
+      <li>Ensured system quality by creating extensive tests with Playwright and monitoring with Datadog to debug issues.</li>
+    
+  </ul>
+
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://bornlogic.com">Bornlogic</a></td>
+        <td>Aug 2022 — Feb 2025</td>
+      </tr>
+
+      <tr>
+        <td>Front-end Developer</td>
+        <td>Remote</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="highlights">
+    
+      <li>Led the development of the new platform&#39;s Business Center, being responsible for most of the functionalities.</li>
+    
+      <li>Collaborated on the new platform&#39;s micro-frontend architecture using Single SPA and webpack, which supported independent team development and contributed to customer retention.</li>
+    
+      <li>Led the development of the reusable component library with over 70 components, conducting rigorous code reviews and maintaining extensive documentation in Storybook.</li>
+    
+      <li>Performed integration with REST APIs using SWR, TanStack Query and state management with React Context and Redux Saga (legacy application).</li>
+    
+      <li>Improved platform stability by writing integration tests with Playwright and React Testing Library.</li>
+    
+  </ul>
+
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://mutual.club">Mutual</a></td>
+        <td>Dec 2020 — Aug 2022</td>
+      </tr>
+
+      <tr>
+        <td>Front-end Developer</td>
+        <td>Remote</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="highlights">
+    
+      <li>Developed web applications with Create React App and Next.js in TypeScript, using Material UI.</li>
+    
+      <li>Developed mobile applications with React Native, using react-native-cli and Expo.</li>
+    
+      <li>Improved stability on web and mobile platforms by writing integration tests using Cypress and React Testing Library, while monitoring with Sentry to quickly identify issues.</li>
+    
+  </ul>
+
+
+
+
+<h2>EDUCATION</h2>
+<table class="subsectionHeader">
+  <tbody>
+    <tr>
+      <td>
+        <a href="https://portal.ufrrj.br/">Universidade Federal Rural do Rio de Janeiro</a>
+      </td>
+      <td>Jan 2015 — Jan 2020</td>
+    </tr>
+
+    <tr>
+      <td>Economics</td>
+      <td>Seropédica, RJ</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>LANGUAGES</h2>
+
+  <ul>
+    <li>English: Fluent</li>
+  </ul>
+
+
+              </div>
+            
+              <div
+                data-resume-content
+                data-language="pt-BR"
+                style="display: block;"
+              >
+                <h1>PHELIPE TELES DA SILVA</h1>
+
+<ul class="subheader">
+  <li>Jan 30, 1996</li>
+  <li>Rio de Janeiro, RJ</li>
+</ul>
+
+<ul class="subheader">
+  <li>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:phelipe_teles@hotmail.com">phelipe_teles@hotmail.com</a>
+  </li>
+  <li>
+    <i class="fa-solid fa-globe"></i>
+    <a href="https://phelipetls.github.io">phelipetls.github.io</a>
+  </li>
+  
+    <li>
+      <i class="fa-brands fa-github"></i>
+      <a href="https://github.com/phelipetls">phelipetls</a>
+    </li>
+  
+    <li>
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/phelipeteles/">phelipeteles</a>
+    </li>
+  
+</ul>
+
+<h2>EXPERIÊNCIA</h2>
+
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://www.sqala.com.br/">SqalaPay Pagamentos</a></td>
+        <td>Feb 2025 — Sep 2025</td>
+      </tr>
+
+      <tr>
+        <td>Desenvolvedor Front-end</td>
+        <td>Remoto</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="highlights">
+    
+      <li>Desenvolvi aplicações web internacionalizadas com TypeScript, React, Next.js (next-i18next), Vite, Chakra UI e GraphQL (Apollo), gerenciando estado com Redux Toolkit e React Context.</li>
+    
+      <li>Implementei comunicação em tempo real para autenticação 3DS em transações de cartão de crédito, melhorando a segurança e prevenindo fraudes.</li>
+    
+      <li>Desenvolvi vitrine de produtos customizável e uma interface para cadastro e edição de produtos com upload de imagens para AWS S3.</li>
+    
+      <li>Colaborei no back-end (TypeScript) ao conectar APIs REST ao BFF em GraphQL, correções de bugs e pequenas melhorias.</li>
+    
+      <li>Assegurei qualidade do sistema criando testes extensivos com Playwright e monitoramento com Datadog para depuração de problemas.</li>
+    
+  </ul>
+
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://bornlogic.com">Bornlogic</a></td>
+        <td>Aug 2022 — Feb 2025</td>
+      </tr>
+
+      <tr>
+        <td>Desenvolvedor Front-end</td>
+        <td>Remoto</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="highlights">
+    
+      <li>Liderei o desenvolvimento do Business Center da nova plataforma, sendo responsável pela maioria das funcionalidades.</li>
+    
+      <li>Colaborei na arquitetura de micro-frontends da nova plataforma, utilizando Single SPA e webpack, que sustentou o desenvolvimento de times independentes e contribuiu para retenção de clientes.</li>
+    
+      <li>Liderei o desenvolvimento da biblioteca de componentes reutilizáveis com mais de 70 componentes, realizando code reviews rigorosos e mantendo documentação extensiva em Storybook.</li>
+    
+      <li>Realizei a integração com REST APIs utilizando SWR, TanStack Query e gerenciamento de estado com React Context e Redux Saga (aplicativo legado)</li>
+    
+      <li>Melhorei a estabilidade da plataforma escrevendo testes de integração com Playwright e React Testing Library.</li>
+    
+  </ul>
+
+  <table class="subsectionHeader">
+    <tbody>
+      <tr>
+        <td><a href="https://mutual.club">Mutual</a></td>
+        <td>Dec 2020 — Aug 2022</td>
+      </tr>
+
+      <tr>
+        <td>Desenvolvedor Front-end</td>
+        <td>Remoto</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="highlights">
+    
+      <li>Desenvolvi aplicativos web com Create React App e Next.js em TypeScript, utilizando Material UI.</li>
+    
+      <li>Desenvolvi aplicativos mobile com React Native, utilizando react-native-cli e Expo.</li>
+    
+      <li>Melhorei a estabilidade nas plataformas web e mobile escrevendo testes de integração utilizando Cypress e React Testing Library, com monitoramento no Sentry para rapidamente identificar problemas.</li>
+    
+  </ul>
+
+
+
+
+<h2>FORMAÇÃO</h2>
+<table class="subsectionHeader">
+  <tbody>
+    <tr>
+      <td>
+        <a href="https://portal.ufrrj.br/">Universidade Federal Rural do Rio de Janeiro</a>
+      </td>
+      <td>Jan 2015 — Jan 2020</td>
+    </tr>
+
+    <tr>
+      <td>Ciências Econômicas</td>
+      <td>Seropédica, RJ</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>IDIOMAS</h2>
+
+  <ul>
+    <li>Inglês: Fluente</li>
+  </ul>
+
+
+              </div>
+            
+
+            <div class="mt-4 flex justify-center">
+              <a
+                data-pdf-button
+                class="btn btn-neutral btn-wide"
+                href="Phelipe_Teles_Desenvolvedor_Frontend.pdf"
+                target="_blank"
+              >
+                Open PDF version
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      data-resume-pdf-pt-br="Phelipe_Teles_Desenvolvedor_Frontend.pdf"
+      data-resume-pdf-en-us="Phelipe_Teles_Frontend_Developer.pdf"
+    >
+      const currentScript = document.currentScript;
+
+      const pdfUrls = {
+        "pt-BR": currentScript.dataset.resumePdfPtBr,
+        "en-US": currentScript.dataset.resumePdfEnUs,
+      };
+
+      const languageSwitcher = document.querySelector(
+        "[data-language-switcher]",
+      );
+      const pdfButton = document.querySelector("[data-pdf-button]");
+      const htmlContents = document.querySelector("[data-resume-content]");
+
+      const handleLanguageChange = () => {
+        const selectedLanguage = languageSwitcher.value;
+
+        for (const htmlContent of htmlContents) {
+          htmlContent.style.display =
+            htmlContent.dataset.language === selectedLanguage
+              ? "block"
+              : "none";
+        }
+
+        const newPdfUrl = pdfUrls[selectedLanguage];
+        pdfButton.href = newPdfUrl;
+
+        document.documentElement.setAttribute("lang", selectedLanguage);
+      };
+
+      languageSwitcher.addEventListener("change", handleLanguageChange);
+    </script>
+  </body>
+</html>
