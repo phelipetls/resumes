@@ -49,11 +49,11 @@ const renderedSite = nunjucks.render(templatePath, {
   pdfUrls: {
     "pt-BR": await buildAndWritePdf(
       "pt-BR",
-      "Phelipe_Teles_Desenvolvedor_Frontend.html",
+      "Phelipe_Teles_Desenvolvedor_Frontend.pdf",
     ),
     "en-US": await buildAndWritePdf(
       "en-US",
-      "Phelipe_Teles_Frontend_Developer.html",
+      "Phelipe_Teles_Frontend_Developer.pdf",
     ),
   },
   htmlContents: {
