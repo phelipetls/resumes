@@ -65,10 +65,6 @@ console.log(`Rendered ${templatePath}`);
 
 await writeFile(join(OUT_DIR, "index.html"), renderedSite);
 
-const server = createServer((request, response) => {
-  return ServeHandler(request, response);
-});
-
 if (env.NODE_ENV === "production") {
   process.exit(0);
 }
@@ -76,6 +72,10 @@ if (env.NODE_ENV === "production") {
 process.chdir(OUT_DIR);
 
 const PORT = env.PORT ?? 3000;
+
+const server = createServer((request, response) => {
+  return ServeHandler(request, response);
+});
 
 server.listen(PORT, () => {
   console.log(`Running at http://localhost:${PORT}`);
