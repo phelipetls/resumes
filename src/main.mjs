@@ -31,7 +31,7 @@ await Promise.all(
 );
 
 async function buildAndWritePdf(language, fileName) {
-  const pdf = await buildPdf(language.code);
+  const pdf = await buildPdf(language);
   const filePath = join(OUT_DIR, fileName);
   await writeFile(filePath, pdf);
   return relative(OUT_DIR, filePath);
